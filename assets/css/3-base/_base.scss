@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,800,900');
+@font-face {
+	font-family: 'gillsansmt';
+	src: url('https://d2axomif2iwq0z.cloudfront.net/fonts/33535gillsansmt.eot');
+	src: local('33535gillsansmt'), 
+		 url('https://d2axomif2iwq0z.cloudfront.net/fonts/33535gillsansmt.woff') format('woff'), 
+		 url('https://d2axomif2iwq0z.cloudfront.net/fonts/33535gillsansmt.ttf') format('truetype');
+}
+
+$bone: #F4EDDC;
+$red: #F15757;
+$dark-blue: #1B1024;
+$purple: #5F2E8B;
+$green: #00A477;
+
+html, body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+p {
+    font-weight:300;
+    line-height: 1.2;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 40px;
+    border: 0;
+    border-top: 8px solid #F4EDDC;
+    width: 8%;
+}
+
+.container{
+    min-height:100%;
+    position: relative;
+    z-index:2;
+}
+
+.img-fluid{
+    width:100%;
+}
+
+.fullheight{
+    min-height:100%;
+}

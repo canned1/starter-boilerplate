@@ -1,0 +1,50 @@
+.calendar{
+    .calendar-item{
+        background-color:rgba(255,255,255,0.65);
+        -webkit-box-shadow: 0 2px 13px 0 rgba(0,0,0,.25);
+        box-shadow: 0 2px 13px 0 rgba(0,0,0,.25);
+        margin-bottom:5px;
+        &:hover, &.active{
+            position:relative;
+            background-color:$purple;
+            color:$bone;
+            right:0px;
+        }
+        .date-number{
+            font-size:2rem;
+            font-weight:600;
+            margin-bottom:0;
+            height: 35px;
+            &.small{
+                position:relative;
+                top:10px;
+                font-size:1.2rem;
+            }
+        }
+        .date-month{
+            text-transform:uppercase;
+            font-weight:600;
+            margin-bottom:4px;
+        }
+        .calendar-name{
+            margin-top: 16px;
+            margin-bottom: 0;
+            font-weight:500;
+            font-size:0.7rem;
+        }
+        .calendar-place{
+            margin-bottom:8px;
+            font-size:0.6rem;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .calendar{
+        .calendar-item{
+            &:hover, &.active{
+                right:-5px;
+            }
+        }
+    }
+}
