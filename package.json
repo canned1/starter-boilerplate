@@ -1,10 +1,12 @@
 {
-  "name": "bootstrap-4-boiler-plate",
+  "name": "starter-boilerplate",
   "version": "1.0.0",
   "description": "a bootstrap 4 boiler plate with sass, concatenation, minification, autoprefixer, sourcemaps, browser-sync, git and gulp task runner",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "start": "gulp serve",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "dist": "gulp dist --env Production --assetsPath https://d2axomif2iwq0z.cloudfront.net"
   },
   "author": "CannedHead",
   "license": "ISC",
@@ -16,5 +18,23 @@
     "compression": "^1.7.3",
     "express": "^4.16.4",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-install": "^1.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-zip": "^4.2.0",
+    "nodemon": "^1.18.5",
+    "run-sequence": "^2.2.1"
   }
 }

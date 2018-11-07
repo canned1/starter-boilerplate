@@ -1,21 +1,17 @@
-var compression = require('compression')
-var express = require('express');
-var app = express();
-var path = require('path');
-var port = process.env.PORT || 3000
+const compression = require('compression')
+
+const express = require('express')
+
+const app = express()
+
+const path = require('path')
+
+const port = process.env.PORT || 5000
 
 app.use(compression())
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/website/index.html'));
-});
+app.use(express.static(__dirname))
 
-app.get('/quibdo', function(req, res) {
-    res.sendFile(path.join(__dirname + '/website/quibdo.html'));
-});
+app.get('/', (_, res) => res.sendFile(path.join(`${__dirname}/views/index.html`)))
 
-app.get('/politicas-de-privacidad', function(req, res) {
-    res.sendFile(path.join(__dirname + '/website/privacy.html'));
-});
-
-app.listen(port);
+app.listen(port)
