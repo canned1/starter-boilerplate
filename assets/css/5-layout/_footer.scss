@@ -1,1 +1,24 @@
-
+.footer{
+    border-top: 1px solid #eee;
+    padding:50px 0 70px;
+    a, p{
+        font-size:0.9rem;
+    }
+    .social-list{
+        li{
+            width:30px;
+            height:30px;
+            a{
+                padding:5px;
+                display:block;
+                width:30px;
+                height:30px;
+                background: $primary;
+                color:$white;
+                border-radius:25px;
+                font-size:15px;
+                text-align:center;
+            }
+        }
+    }
+}

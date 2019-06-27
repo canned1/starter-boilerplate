@@ -1,0 +1,37 @@
+.home{
+    padding-bottom:50px;
+    .home-search{
+        position:absolute;
+        z-index:2;
+        width:100%;
+        top:6.5rem;
+        h1{
+            color:$white;
+        }
+    }
+    .home-categories{
+        padding-right: 15px;
+        padding-left: 15px;
+        .home-category{
+            width:22%;
+            border: 1px solid $primary;
+            border-radius: $border-radius;
+            font-weight:$bold;
+            padding:20px 0 20px 15px;
+            text-decoration: none;
+            img{
+                margin-right:10px;
+            }
+            span{
+                color:$black;
+            
+            }
+            &:hover, &:focus{
+                background: $primary;
+                span{
+                    color: $white;
+                }
+            }
+        }
+    }
+}

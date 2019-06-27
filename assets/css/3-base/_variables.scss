@@ -1,11 +1,17 @@
-//Custom variables
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900&display=swap');
 
-// Descriptive color variables
+$sans-serif: "Muli", Helvetica, Verdana, sans-serif;
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black:900;
 
-// Functional color variables
+$purple:#493E6F;
+$black: #433;
+$green: #14e7a1;
 
-// Font stacks
 
-// Asset paths
-// $path-image   :   '../img';
-// $path-fonts     :  '../fonts';
+$primary:  $purple;
+$secondary: $green;

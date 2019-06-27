@@ -1,0 +1,30 @@
+.product{
+    text-decoration: none;
+    color:$black;
+    &:hover, &:focus{
+        text-decoration: none;
+        color:$black; 
+    }
+    &.lg-size{
+        flex: 0 0 20%;
+        max-width: 20%;
+        .img-wrapper{
+            height:300px;
+            overflow:hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                height:100%;
+                width:auto;
+            }
+        }
+    }
+    .description{
+        font-size:0.9rem;
+    }
+    .price{
+        color: $purple;
+        font-weight: $bold;
+    }
+}
