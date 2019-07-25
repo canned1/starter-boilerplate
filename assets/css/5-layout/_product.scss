@@ -1,6 +1,7 @@
 .product{
     text-decoration: none;
     color:$black;
+    position:relative;
     &:hover, &:focus{
         text-decoration: none;
         color:$black; 
@@ -14,11 +15,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            img{
+            border-radius: 10px;
+            .img-container{
+                width:100%;
                 height:100%;
-                width:auto;
+                img{
+                    height:100%;
+                    width:auto
+                }
             }
         }
+    }
+    .discount{
+        position:absolute;
+        z-index:2;
+        left:5px;
+        top:5px;
+        background:$secondary;
+        color:$primary;
+        border-radius: 4px;
+        padding: 15px;
+        font-weight: $bold;
+        max-width: 110px;
     }
     .description{
         font-size:0.9rem;

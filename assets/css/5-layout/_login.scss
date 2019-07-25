@@ -1,0 +1,20 @@
+.woocommerce form.checkout_coupon, 
+.woocommerce form.login, 
+.woocommerce form.register {
+    background: #fff;
+    input[type='text'], input[type='password'] {
+        @extend .form-control;
+    }
+    .woocommerce-form-row{
+        @extend .form-group;
+    }
+    .woocommerce form .form-row label {
+        line-height: 1;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    button{
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}

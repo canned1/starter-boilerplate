@@ -49,10 +49,9 @@
 	<meta name="msapplication-TileColor" content="#F15757">
 	<meta name="msapplication-TsileImage" content="<?php echo bloginfo( 'template_directory' ); ?>/ms-icon-144x144.png">
 	<meta name="theme-color" content="#F15757"> -->
-	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo( 'template_directory' ); ?>/css/main.css">
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark hl-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo home_url('/');?>">
@@ -64,21 +63,14 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Ayuda</a>
-					</li>
-					<?php if ( is_user_logged_in() ) { ?>
-						<li>
-							<a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','woothemes'); ?>"><?php _e('My Account','woothemes'); ?></a>
-						</li>
-					<?php } 
-					else { ?>
-						<li>
-							<a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','woothemes'); ?>"><?php _e('Login / Register','woothemes'); ?></a>
-						</li>
-					<?php } ?>
-				</ul>
+			<?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'header-menu',
+                        'menu'       => 'header-menu',
+                        'menu_class' => 'navbar-nav ml-auto',
+                        'container'  => 'false'
+                    ) );
+                ?>
 			</div>
 		</div>
 	</nav>

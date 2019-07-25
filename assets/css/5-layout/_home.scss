@@ -1,10 +1,27 @@
 .home{
     padding-bottom:50px;
+    .homecarousel, .carousel-inner, .carousel-item, .carousel-item img{
+        height:100vh;
+    }
+    .homecarousel .carousel-item img{
+        width:auto;
+    }
+    .carousel-caption{
+        font-size:40px;
+        top:90px;
+        bottom:auto;
+    }
+    .carousel-control-prev:hover, .carousel-control-prev:focus, .carousel-control-next:hover, .carousel-control-next:focus {
+        z-index: 9;
+    }
+    .carousel-indicators .active{
+        background: $secondary;
+    }
     .home-search{
         position:absolute;
         z-index:2;
         width:100%;
-        top:6.5rem;
+        top:10.5rem;
         h1{
             color:$white;
         }
@@ -21,6 +38,8 @@
             text-decoration: none;
             img{
                 margin-right:10px;
+                width:25px;
+                height:auto;
             }
             span{
                 color:$black;
@@ -32,6 +51,14 @@
                     color: $white;
                 }
             }
+        }
+    }
+    @media (min-width: 768px){
+        .homecarousel, .carousel-inner, .carousel-item, .carousel-item img{
+            height:auto;
+        }
+        .homecarousel .carousel-item img{
+            width:100%;
         }
     }
 }

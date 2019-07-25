@@ -11,6 +11,9 @@ add_filter( 'show_admin_bar', '__return_false' );
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 }
 
 function theme_styles() {
@@ -30,6 +33,9 @@ add_action( 'wp_enqueue_scripts', 'theme_js' );
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
+/* 
+* Register menus
+*/ 
 function register_theme_menus() {
     register_nav_menus(
         array(
@@ -38,6 +44,60 @@ function register_theme_menus() {
     );
 }
 add_action( 'init', 'register_theme_menus' );
+
+
+// MiniCart ===========
+
+function add_search_form($items, $args) {
+    if( $args->theme_location == 'header-menu' ){
+    $items .=   '<li class="nav-item">'
+                . '<div class="row">'
+                    . '<div class="col-6 col-md-12 order-2">'
+                        . '<div class="row justify-content-end">'
+                            . '<div class="col-auto">'
+                                . '<a href="#" class="nav-link search-icon" data-toggle="modal" data-target="#searchModal">'
+                                    . '<img class="img-fluid" src="'. get_template_directory_uri() .'/assets/img/search-icon.svg" alt="search">'
+                                . '</a>'
+                            . '</div>'
+                        . '</div>'
+                    . '</div>'
+                    . '<div class="col-6 d-md-none">'
+                        . '<a href="'. wc_get_cart_url(). '"  class="nav-link cart-icon">'
+                        . '<img class="img-fluid d-md-none" src="'. get_template_directory_uri() .'/assets/img/shopping-cart-icon.svg" alt="cart">'
+                        . '<span class="cart-quantity">'. WC()->cart->cart_contents_count .'</span>'
+                        . '<span class="cart-price">'. WC()->cart->get_cart_total() .'</span>'
+                        . '</a>'
+                    . '</div>'
+                . '</div>'
+              . '</li>'
+              . '<li class="nav-item d-none d-md-block">'
+                    . '<a href="'. wc_get_cart_url(). '"  class="nav-link cart-icon">'
+                        . '<img class="img-fluid" src="'. get_template_directory_uri() .'/assets/img/shopping-cart-icon.svg" alt="cart">'
+                        . '<span class="cart-quantity">'. WC()->cart->cart_contents_count .'</span>'
+                        . '<span class="cart-price">'. WC()->cart->get_cart_total() .'</span>'
+                    . '</a>'
+              .'</li>';
+        if ( is_user_logged_in() ) { 
+            $items .=   '<li class="nav-item dropdown">'
+                            .'<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
+                                . wp_get_current_user()->display_name
+                            .'</a>'
+                            .'<div class="dropdown-menu" aria-labelledby="navbarDropdown">'
+                                .'<a class="dropdown-item" href='. get_permalink( get_option('woocommerce_myaccount_page_id') ). '">Mi cuenta</a>'
+                                .'<div class="dropdown-divider"></div>'
+                                .'<a class="dropdown-item" href="'. wp_logout_url() .'">'. pll__('Logout') .'</a>'
+                            .'</div>'
+                        .'</li>';
+        } 
+        else { 
+            $items .= '<li class="nav-item">'
+                .'<a class="nav-link" href="'. get_permalink( get_option('woocommerce_myaccount_page_id') ) .'" title="'. pll__('Login / Register','woothemes').'">'. pll__('Login / Register','woothemes') .'</a>'
+            .'</li>';
+        }
+    }
+  return $items;
+}
+add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
 
 // WIDGETS
 function arphabet_widgets_init() {
@@ -73,6 +133,48 @@ function jk_woocommerce_breadcrumbs() {
         );
 }
 
+// Display only parent products
+
+function so_27975262_product_query( $q ){
+    $q->set( 'post_parent', 0 );
+}
+add_action( 'woocommerce_product_query', 'so_27975262_product_query', 10, 2  );
+
+/**
+ * Change number or products per row to 3
+ */
+add_filter('loop_shop_columns', 'loop_columns', 999);
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+/**
+ * Remove add to cart button from shop and category page 
+ * */
+add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
+
+function remove_add_to_cart_buttons() {
+  if( is_product_category() || is_shop()) { 
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+  }
+}
+
+/**
+ * Add the product's short description (excerpt) to the WooCommerce shop/category pages. The description displays after the product's name, but before the product's price.
+ */
+function woocommerce_after_shop_loop_item_title_short_description() {
+	global $product;
+	if ( ! $product->post->post_excerpt ) return;
+	?>
+	<div itemprop="description">
+		<?php echo apply_filters( 'woocommerce_short_description', $product->post->post_excerpt ) ?>
+	</div>
+	<?php
+}
+add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_after_shop_loop_item_title_short_description', 5);
+
 /**
  * Add bootstrap classes to checkout fields
  */
@@ -89,5 +191,56 @@ function addBootstrapToCheckoutFields($fields) {
     }
     return $fields;
 }
+
+add_filter('woocommerce_form_field_args', function ($args, $key, $value) {
+    $args['input_class'][] = 'form-control';
+    $args['class'][] = 'form-group';
+    return $args;
+}, 10, 3);
+
+// Modify the subscriptions error
+function my_woocommerce_add_error( $error ) {
+	switch ( $error ) {
+		case( '<strong>Billing First Name</strong> is a required field.' ):
+			$error = "El campo <strong>NOMBRES</strong> es requerido.";
+			break;
+		case( '<strong>Billing Last Name</strong> is a required field.' ):
+			$error = "El campo <strong>APELLIDOS</strong> es requerido.";
+			break;
+		case( '<strong>Billing Email Address</strong> is a required field.' ):
+			$error = "El campo <strong>EMAIL</strong> es requerido.";
+			break;
+		case( '<strong>Billing Phone</strong> is a required field.' ):
+			$error = "El campo <strong>TELÉFONO</strong> es requerido.";
+			break;
+		case( '<strong>Billing Address</strong> is a required field.' ):
+			$error = "El campo <strong>DIRECCIÓN</strong> es requerido.";
+			break;
+		case( '<strong>Billing Town / City</strong> is a required field.' ):
+			$error = "El campo <strong>CIUDAD</strong> es requerido.";
+			break;
+		case( '<strong>Billing State / County</strong> is a required field.' ):
+			$error = "El campo <strong>ESTADO</strong> es requerido.";
+			break;
+		case( 'Invalid payment method.'):
+			$error = "Método de pago invalido.";
+			break;
+	}
+	return $error;
+}
+add_filter( 'woocommerce_add_error', 'my_woocommerce_add_error' );
+
+// Modify the default WooCommerce orderby dropdown
+function patricks_woocommerce_catalog_orderby( $orderby ) {
+    $orderby["menu_order"] = __('Predeterminado', 'woocommerce');
+    $orderby["relevance"] = __('Afinidad', 'woocommerce');
+	$orderby["popularity"] = __('Ordenar por popularidad', 'woocommerce');
+	$orderby["rating"] = __('Ordenar por rating', 'woocommerce');
+	$orderby["date"] = __('Ordenar por fecha: nuevo a antiguo', 'woocommerce');
+	$orderby["price"] = __('Ordenar por precio: bajo a alto', 'woocommerce');
+	$orderby["price-desc"] = __('Ordenar por precio: alto a bajo', 'woocommerce');
+	return $orderby;
+}
+add_filter( "woocommerce_catalog_orderby", "patricks_woocommerce_catalog_orderby", 20 );
 
 ?>

@@ -642,7 +642,7 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3; }
 
-.list-unstyled {
+.list-unstyled, .woocommerce-MyAccount-navigation ul {
   padding-left: 0;
   list-style: none; }
 
@@ -1610,21 +1610,22 @@ pre {
   .offset-xl-11 {
     margin-left: 91.66667%; } }
 
-.table {
+.table, table {
   width: 100%;
   margin-bottom: 1rem;
   background-color: transparent; }
-  .table th,
-  .table td {
+  .table th, table th,
+  .table td,
+  table td {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6; }
-  .table thead th {
+  .table thead th, table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6; }
-  .table tbody + tbody {
+  .table tbody + tbody, table tbody + tbody {
     border-top: 2px solid #dee2e6; }
-  .table .table {
+  .table .table, table .table, .table table, table table {
     background-color: #fff; }
 
 .table-sm th,
@@ -1751,12 +1752,12 @@ pre {
   .table-hover .table-active:hover > th {
     background-color: rgba(0, 0, 0, 0.075); }
 
-.table .thead-dark th {
+.table .thead-dark th, table .thead-dark th {
   color: #fff;
   background-color: #212529;
   border-color: #32383e; }
 
-.table .thead-light th {
+.table .thead-light th, table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
   border-color: #dee2e6; }
@@ -1824,7 +1825,11 @@ pre {
   .table-responsive > .table-bordered {
     border: 0; }
 
-.form-control {
+.form-control, .woocommerce form.checkout_coupon input[type='text'], .woocommerce form.checkout_coupon input[type='password'],
+.woocommerce form.login input[type='text'],
+.woocommerce form.login input[type='password'],
+.woocommerce form.register input[type='text'],
+.woocommerce form.register input[type='password'], .input-text {
   display: block;
   width: 100%;
   height: calc(2.25rem + 2px);
@@ -1841,36 +1846,72 @@ pre {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
-    .form-control {
+    .form-control, .woocommerce form.checkout_coupon input[type='text'], .woocommerce form.checkout_coupon input[type='password'],
+    .woocommerce form.login input[type='text'],
+    .woocommerce form.login input[type='password'],
+    .woocommerce form.register input[type='text'],
+    .woocommerce form.register input[type='password'], .input-text {
       -webkit-transition: none;
       transition: none; } }
-  .form-control::-ms-expand {
+  .form-control::-ms-expand, .woocommerce form.checkout_coupon input[type='text']::-ms-expand, .woocommerce form.checkout_coupon input[type='password']::-ms-expand,
+  .woocommerce form.login input[type='text']::-ms-expand,
+  .woocommerce form.login input[type='password']::-ms-expand,
+  .woocommerce form.register input[type='text']::-ms-expand,
+  .woocommerce form.register input[type='password']::-ms-expand, .input-text::-ms-expand {
     background-color: transparent;
     border: 0; }
-  .form-control:focus {
+  .form-control:focus, .woocommerce form.checkout_coupon input:focus[type='text'], .woocommerce form.checkout_coupon input:focus[type='password'],
+  .woocommerce form.login input:focus[type='text'],
+  .woocommerce form.login input:focus[type='password'],
+  .woocommerce form.register input:focus[type='text'],
+  .woocommerce form.register input:focus[type='password'], .input-text:focus {
     color: #495057;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .form-control::-webkit-input-placeholder {
+  .form-control::-webkit-input-placeholder, .woocommerce form.checkout_coupon input[type='text']::-webkit-input-placeholder, .woocommerce form.checkout_coupon input[type='password']::-webkit-input-placeholder,
+  .woocommerce form.login input[type='text']::-webkit-input-placeholder,
+  .woocommerce form.login input[type='password']::-webkit-input-placeholder,
+  .woocommerce form.register input[type='text']::-webkit-input-placeholder,
+  .woocommerce form.register input[type='password']::-webkit-input-placeholder, .input-text::-webkit-input-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control::-moz-placeholder {
+  .form-control::-moz-placeholder, .woocommerce form.checkout_coupon input[type='text']::-moz-placeholder, .woocommerce form.checkout_coupon input[type='password']::-moz-placeholder,
+  .woocommerce form.login input[type='text']::-moz-placeholder,
+  .woocommerce form.login input[type='password']::-moz-placeholder,
+  .woocommerce form.register input[type='text']::-moz-placeholder,
+  .woocommerce form.register input[type='password']::-moz-placeholder, .input-text::-moz-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control::-ms-input-placeholder {
+  .form-control::-ms-input-placeholder, .woocommerce form.checkout_coupon input[type='text']::-ms-input-placeholder, .woocommerce form.checkout_coupon input[type='password']::-ms-input-placeholder,
+  .woocommerce form.login input[type='text']::-ms-input-placeholder,
+  .woocommerce form.login input[type='password']::-ms-input-placeholder,
+  .woocommerce form.register input[type='text']::-ms-input-placeholder,
+  .woocommerce form.register input[type='password']::-ms-input-placeholder, .input-text::-ms-input-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control::placeholder {
+  .form-control::placeholder, .woocommerce form.checkout_coupon input[type='text']::placeholder, .woocommerce form.checkout_coupon input[type='password']::placeholder,
+  .woocommerce form.login input[type='text']::placeholder,
+  .woocommerce form.login input[type='password']::placeholder,
+  .woocommerce form.register input[type='text']::placeholder,
+  .woocommerce form.register input[type='password']::placeholder, .input-text::placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:disabled, .form-control[readonly] {
+  .form-control:disabled, .woocommerce form.checkout_coupon input:disabled[type='text'], .woocommerce form.checkout_coupon input:disabled[type='password'],
+  .woocommerce form.login input:disabled[type='text'],
+  .woocommerce form.login input:disabled[type='password'],
+  .woocommerce form.register input:disabled[type='text'],
+  .woocommerce form.register input:disabled[type='password'], .input-text:disabled, .form-control[readonly], .woocommerce form.checkout_coupon input[readonly][type='text'], .woocommerce form.checkout_coupon input[readonly][type='password'],
+  .woocommerce form.login input[readonly][type='text'],
+  .woocommerce form.login input[readonly][type='password'],
+  .woocommerce form.register input[readonly][type='text'],
+  .woocommerce form.register input[readonly][type='password'], .input-text[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
 
-select.form-control:focus::-ms-value {
+select.form-control:focus::-ms-value, select.input-text:focus::-ms-value {
   color: #495057;
   background-color: #fff; }
 
@@ -1927,13 +1968,15 @@ select.form-control:focus::-ms-value {
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-select.form-control[size], select.form-control[multiple] {
+select.form-control[size], select.input-text[size], select.form-control[multiple], select.input-text[multiple] {
   height: auto; }
 
-textarea.form-control {
+textarea.form-control, textarea.input-text {
   height: auto; }
 
-.form-group {
+.form-group, .woocommerce form.checkout_coupon .woocommerce-form-row,
+.woocommerce form.login .woocommerce-form-row,
+.woocommerce form.register .woocommerce-form-row {
   margin-bottom: 1rem; }
 
 .form-text {
@@ -2004,19 +2047,55 @@ textarea.form-control {
   background-color: rgba(40, 167, 69, 0.9);
   border-radius: 0.25rem; }
 
-.was-validated .form-control:valid, .form-control.is-valid, .was-validated
+.was-validated .form-control:valid, .was-validated .woocommerce form.checkout_coupon input:valid[type='text'], .woocommerce form.checkout_coupon .was-validated input:valid[type='text'], .was-validated .woocommerce form.checkout_coupon input:valid[type='password'], .woocommerce form.checkout_coupon .was-validated input:valid[type='password'],
+.was-validated .woocommerce form.login input:valid[type='text'], .woocommerce form.login .was-validated input:valid[type='text'],
+.was-validated .woocommerce form.login input:valid[type='password'], .woocommerce form.login .was-validated input:valid[type='password'],
+.was-validated .woocommerce form.register input:valid[type='text'], .woocommerce form.register .was-validated input:valid[type='text'],
+.was-validated .woocommerce form.register input:valid[type='password'], .woocommerce form.register .was-validated input:valid[type='password'], .was-validated .input-text:valid, .form-control.is-valid, .woocommerce form.checkout_coupon input.is-valid[type='text'], .woocommerce form.checkout_coupon input.is-valid[type='password'],
+.woocommerce form.login input.is-valid[type='text'],
+.woocommerce form.login input.is-valid[type='password'],
+.woocommerce form.register input.is-valid[type='text'],
+.woocommerce form.register input.is-valid[type='password'], .is-valid.input-text, .was-validated
 .custom-select:valid,
 .custom-select.is-valid {
   border-color: #28a745; }
-  .was-validated .form-control:valid:focus, .form-control.is-valid:focus, .was-validated
+  .was-validated .form-control:valid:focus, .was-validated .woocommerce form.checkout_coupon input:valid:focus[type='text'], .woocommerce form.checkout_coupon .was-validated input:valid:focus[type='text'], .was-validated .woocommerce form.checkout_coupon input:valid:focus[type='password'], .woocommerce form.checkout_coupon .was-validated input:valid:focus[type='password'],
+  .was-validated .woocommerce form.login input:valid:focus[type='text'], .woocommerce form.login .was-validated input:valid:focus[type='text'],
+  .was-validated .woocommerce form.login input:valid:focus[type='password'], .woocommerce form.login .was-validated input:valid:focus[type='password'],
+  .was-validated .woocommerce form.register input:valid:focus[type='text'], .woocommerce form.register .was-validated input:valid:focus[type='text'],
+  .was-validated .woocommerce form.register input:valid:focus[type='password'], .woocommerce form.register .was-validated input:valid:focus[type='password'], .was-validated .input-text:valid:focus, .form-control.is-valid:focus, .woocommerce form.checkout_coupon input.is-valid:focus[type='text'], .woocommerce form.checkout_coupon input.is-valid:focus[type='password'],
+  .woocommerce form.login input.is-valid:focus[type='text'],
+  .woocommerce form.login input.is-valid:focus[type='password'],
+  .woocommerce form.register input.is-valid:focus[type='text'],
+  .woocommerce form.register input.is-valid:focus[type='password'], .is-valid.input-text:focus, .was-validated
   .custom-select:valid:focus,
   .custom-select.is-valid:focus {
     border-color: #28a745;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
             box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
-  .was-validated .form-control:valid ~ .valid-feedback,
-  .was-validated .form-control:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback,
-  .form-control.is-valid ~ .valid-tooltip, .was-validated
+  .was-validated .form-control:valid ~ .valid-feedback, .was-validated .woocommerce form.checkout_coupon input:valid[type='text'] ~ .valid-feedback, .woocommerce form.checkout_coupon .was-validated input:valid[type='text'] ~ .valid-feedback, .was-validated .woocommerce form.checkout_coupon input:valid[type='password'] ~ .valid-feedback, .woocommerce form.checkout_coupon .was-validated input:valid[type='password'] ~ .valid-feedback, .was-validated .woocommerce form.login input:valid[type='text'] ~ .valid-feedback, .woocommerce form.login .was-validated input:valid[type='text'] ~ .valid-feedback, .was-validated .woocommerce form.login input:valid[type='password'] ~ .valid-feedback, .woocommerce form.login .was-validated input:valid[type='password'] ~ .valid-feedback, .was-validated .woocommerce form.register input:valid[type='text'] ~ .valid-feedback, .woocommerce form.register .was-validated input:valid[type='text'] ~ .valid-feedback, .was-validated .woocommerce form.register input:valid[type='password'] ~ .valid-feedback, .woocommerce form.register .was-validated input:valid[type='password'] ~ .valid-feedback, .was-validated .input-text:valid ~ .valid-feedback,
+  .was-validated .form-control:valid ~ .valid-tooltip,
+  .was-validated .woocommerce form.checkout_coupon input:valid[type='text'] ~ .valid-tooltip,
+  .woocommerce form.checkout_coupon .was-validated input:valid[type='text'] ~ .valid-tooltip,
+  .was-validated .woocommerce form.checkout_coupon input:valid[type='password'] ~ .valid-tooltip,
+  .woocommerce form.checkout_coupon .was-validated input:valid[type='password'] ~ .valid-tooltip,
+  .was-validated .woocommerce form.login input:valid[type='text'] ~ .valid-tooltip,
+  .woocommerce form.login .was-validated input:valid[type='text'] ~ .valid-tooltip,
+  .was-validated .woocommerce form.login input:valid[type='password'] ~ .valid-tooltip,
+  .woocommerce form.login .was-validated input:valid[type='password'] ~ .valid-tooltip,
+  .was-validated .woocommerce form.register input:valid[type='text'] ~ .valid-tooltip,
+  .woocommerce form.register .was-validated input:valid[type='text'] ~ .valid-tooltip,
+  .was-validated .woocommerce form.register input:valid[type='password'] ~ .valid-tooltip,
+  .woocommerce form.register .was-validated input:valid[type='password'] ~ .valid-tooltip,
+  .was-validated .input-text:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .woocommerce form.checkout_coupon input.is-valid[type='text'] ~ .valid-feedback, .woocommerce form.checkout_coupon input.is-valid[type='password'] ~ .valid-feedback, .woocommerce form.login input.is-valid[type='text'] ~ .valid-feedback, .woocommerce form.login input.is-valid[type='password'] ~ .valid-feedback, .woocommerce form.register input.is-valid[type='text'] ~ .valid-feedback, .woocommerce form.register input.is-valid[type='password'] ~ .valid-feedback, .is-valid.input-text ~ .valid-feedback,
+  .form-control.is-valid ~ .valid-tooltip,
+  .woocommerce form.checkout_coupon input.is-valid[type='text'] ~ .valid-tooltip,
+  .woocommerce form.checkout_coupon input.is-valid[type='password'] ~ .valid-tooltip,
+  .woocommerce form.login input.is-valid[type='text'] ~ .valid-tooltip,
+  .woocommerce form.login input.is-valid[type='password'] ~ .valid-tooltip,
+  .woocommerce form.register input.is-valid[type='text'] ~ .valid-tooltip,
+  .woocommerce form.register input.is-valid[type='password'] ~ .valid-tooltip,
+  .is-valid.input-text ~ .valid-tooltip, .was-validated
   .custom-select:valid ~ .valid-feedback,
   .was-validated
   .custom-select:valid ~ .valid-tooltip,
@@ -2089,19 +2168,55 @@ textarea.form-control {
   background-color: rgba(220, 53, 69, 0.9);
   border-radius: 0.25rem; }
 
-.was-validated .form-control:invalid, .form-control.is-invalid, .was-validated
+.was-validated .form-control:invalid, .was-validated .woocommerce form.checkout_coupon input:invalid[type='text'], .woocommerce form.checkout_coupon .was-validated input:invalid[type='text'], .was-validated .woocommerce form.checkout_coupon input:invalid[type='password'], .woocommerce form.checkout_coupon .was-validated input:invalid[type='password'],
+.was-validated .woocommerce form.login input:invalid[type='text'], .woocommerce form.login .was-validated input:invalid[type='text'],
+.was-validated .woocommerce form.login input:invalid[type='password'], .woocommerce form.login .was-validated input:invalid[type='password'],
+.was-validated .woocommerce form.register input:invalid[type='text'], .woocommerce form.register .was-validated input:invalid[type='text'],
+.was-validated .woocommerce form.register input:invalid[type='password'], .woocommerce form.register .was-validated input:invalid[type='password'], .was-validated .input-text:invalid, .form-control.is-invalid, .woocommerce form.checkout_coupon input.is-invalid[type='text'], .woocommerce form.checkout_coupon input.is-invalid[type='password'],
+.woocommerce form.login input.is-invalid[type='text'],
+.woocommerce form.login input.is-invalid[type='password'],
+.woocommerce form.register input.is-invalid[type='text'],
+.woocommerce form.register input.is-invalid[type='password'], .is-invalid.input-text, .was-validated
 .custom-select:invalid,
 .custom-select.is-invalid {
   border-color: #dc3545; }
-  .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus, .was-validated
+  .was-validated .form-control:invalid:focus, .was-validated .woocommerce form.checkout_coupon input:invalid:focus[type='text'], .woocommerce form.checkout_coupon .was-validated input:invalid:focus[type='text'], .was-validated .woocommerce form.checkout_coupon input:invalid:focus[type='password'], .woocommerce form.checkout_coupon .was-validated input:invalid:focus[type='password'],
+  .was-validated .woocommerce form.login input:invalid:focus[type='text'], .woocommerce form.login .was-validated input:invalid:focus[type='text'],
+  .was-validated .woocommerce form.login input:invalid:focus[type='password'], .woocommerce form.login .was-validated input:invalid:focus[type='password'],
+  .was-validated .woocommerce form.register input:invalid:focus[type='text'], .woocommerce form.register .was-validated input:invalid:focus[type='text'],
+  .was-validated .woocommerce form.register input:invalid:focus[type='password'], .woocommerce form.register .was-validated input:invalid:focus[type='password'], .was-validated .input-text:invalid:focus, .form-control.is-invalid:focus, .woocommerce form.checkout_coupon input.is-invalid:focus[type='text'], .woocommerce form.checkout_coupon input.is-invalid:focus[type='password'],
+  .woocommerce form.login input.is-invalid:focus[type='text'],
+  .woocommerce form.login input.is-invalid:focus[type='password'],
+  .woocommerce form.register input.is-invalid:focus[type='text'],
+  .woocommerce form.register input.is-invalid:focus[type='password'], .is-invalid.input-text:focus, .was-validated
   .custom-select:invalid:focus,
   .custom-select.is-invalid:focus {
     border-color: #dc3545;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
             box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); }
-  .was-validated .form-control:invalid ~ .invalid-feedback,
-  .was-validated .form-control:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback,
-  .form-control.is-invalid ~ .invalid-tooltip, .was-validated
+  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .woocommerce form.checkout_coupon input:invalid[type='text'] ~ .invalid-feedback, .woocommerce form.checkout_coupon .was-validated input:invalid[type='text'] ~ .invalid-feedback, .was-validated .woocommerce form.checkout_coupon input:invalid[type='password'] ~ .invalid-feedback, .woocommerce form.checkout_coupon .was-validated input:invalid[type='password'] ~ .invalid-feedback, .was-validated .woocommerce form.login input:invalid[type='text'] ~ .invalid-feedback, .woocommerce form.login .was-validated input:invalid[type='text'] ~ .invalid-feedback, .was-validated .woocommerce form.login input:invalid[type='password'] ~ .invalid-feedback, .woocommerce form.login .was-validated input:invalid[type='password'] ~ .invalid-feedback, .was-validated .woocommerce form.register input:invalid[type='text'] ~ .invalid-feedback, .woocommerce form.register .was-validated input:invalid[type='text'] ~ .invalid-feedback, .was-validated .woocommerce form.register input:invalid[type='password'] ~ .invalid-feedback, .woocommerce form.register .was-validated input:invalid[type='password'] ~ .invalid-feedback, .was-validated .input-text:invalid ~ .invalid-feedback,
+  .was-validated .form-control:invalid ~ .invalid-tooltip,
+  .was-validated .woocommerce form.checkout_coupon input:invalid[type='text'] ~ .invalid-tooltip,
+  .woocommerce form.checkout_coupon .was-validated input:invalid[type='text'] ~ .invalid-tooltip,
+  .was-validated .woocommerce form.checkout_coupon input:invalid[type='password'] ~ .invalid-tooltip,
+  .woocommerce form.checkout_coupon .was-validated input:invalid[type='password'] ~ .invalid-tooltip,
+  .was-validated .woocommerce form.login input:invalid[type='text'] ~ .invalid-tooltip,
+  .woocommerce form.login .was-validated input:invalid[type='text'] ~ .invalid-tooltip,
+  .was-validated .woocommerce form.login input:invalid[type='password'] ~ .invalid-tooltip,
+  .woocommerce form.login .was-validated input:invalid[type='password'] ~ .invalid-tooltip,
+  .was-validated .woocommerce form.register input:invalid[type='text'] ~ .invalid-tooltip,
+  .woocommerce form.register .was-validated input:invalid[type='text'] ~ .invalid-tooltip,
+  .was-validated .woocommerce form.register input:invalid[type='password'] ~ .invalid-tooltip,
+  .woocommerce form.register .was-validated input:invalid[type='password'] ~ .invalid-tooltip,
+  .was-validated .input-text:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .woocommerce form.checkout_coupon input.is-invalid[type='text'] ~ .invalid-feedback, .woocommerce form.checkout_coupon input.is-invalid[type='password'] ~ .invalid-feedback, .woocommerce form.login input.is-invalid[type='text'] ~ .invalid-feedback, .woocommerce form.login input.is-invalid[type='password'] ~ .invalid-feedback, .woocommerce form.register input.is-invalid[type='text'] ~ .invalid-feedback, .woocommerce form.register input.is-invalid[type='password'] ~ .invalid-feedback, .is-invalid.input-text ~ .invalid-feedback,
+  .form-control.is-invalid ~ .invalid-tooltip,
+  .woocommerce form.checkout_coupon input.is-invalid[type='text'] ~ .invalid-tooltip,
+  .woocommerce form.checkout_coupon input.is-invalid[type='password'] ~ .invalid-tooltip,
+  .woocommerce form.login input.is-invalid[type='text'] ~ .invalid-tooltip,
+  .woocommerce form.login input.is-invalid[type='password'] ~ .invalid-tooltip,
+  .woocommerce form.register input.is-invalid[type='text'] ~ .invalid-tooltip,
+  .woocommerce form.register input.is-invalid[type='password'] ~ .invalid-tooltip,
+  .is-invalid.input-text ~ .invalid-tooltip, .was-validated
   .custom-select:invalid ~ .invalid-feedback,
   .was-validated
   .custom-select:invalid ~ .invalid-tooltip,
@@ -2178,7 +2293,9 @@ textarea.form-control {
           -ms-flex-pack: center;
               justify-content: center;
       margin-bottom: 0; }
-    .form-inline .form-group {
+    .form-inline .form-group, .form-inline .woocommerce form.checkout_coupon .woocommerce-form-row, .woocommerce form.checkout_coupon .form-inline .woocommerce-form-row,
+    .form-inline .woocommerce form.login .woocommerce-form-row, .woocommerce form.login .form-inline .woocommerce-form-row,
+    .form-inline .woocommerce form.register .woocommerce-form-row, .woocommerce form.register .form-inline .woocommerce-form-row {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -2193,7 +2310,11 @@ textarea.form-control {
           -ms-flex-align: center;
               align-items: center;
       margin-bottom: 0; }
-    .form-inline .form-control {
+    .form-inline .form-control, .form-inline .woocommerce form.checkout_coupon input[type='text'], .woocommerce form.checkout_coupon .form-inline input[type='text'], .form-inline .woocommerce form.checkout_coupon input[type='password'], .woocommerce form.checkout_coupon .form-inline input[type='password'],
+    .form-inline .woocommerce form.login input[type='text'], .woocommerce form.login .form-inline input[type='text'],
+    .form-inline .woocommerce form.login input[type='password'], .woocommerce form.login .form-inline input[type='password'],
+    .form-inline .woocommerce form.register input[type='text'], .woocommerce form.register .form-inline input[type='text'],
+    .form-inline .woocommerce form.register input[type='password'], .woocommerce form.register .form-inline input[type='password'], .form-inline .input-text {
       display: inline-block;
       width: auto;
       vertical-align: middle; }
@@ -2229,7 +2350,9 @@ textarea.form-control {
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
-.btn {
+.btn, .woocommerce form.checkout_coupon button,
+.woocommerce form.login button,
+.woocommerce form.register button {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -2249,46 +2372,88 @@ textarea.form-control {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
-    .btn {
+    .btn, .woocommerce form.checkout_coupon button,
+    .woocommerce form.login button,
+    .woocommerce form.register button {
       -webkit-transition: none;
       transition: none; } }
-  .btn:hover, .btn:focus {
+  .btn:hover, .woocommerce form.checkout_coupon button:hover,
+  .woocommerce form.login button:hover,
+  .woocommerce form.register button:hover, .btn:focus, .woocommerce form.checkout_coupon button:focus,
+  .woocommerce form.login button:focus,
+  .woocommerce form.register button:focus {
     text-decoration: none; }
-  .btn:focus, .btn.focus {
+  .btn:focus, .woocommerce form.checkout_coupon button:focus,
+  .woocommerce form.login button:focus,
+  .woocommerce form.register button:focus, .btn.focus, .woocommerce form.checkout_coupon button.focus,
+  .woocommerce form.login button.focus,
+  .woocommerce form.register button.focus {
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .btn.disabled, .btn:disabled {
+  .btn.disabled, .woocommerce form.checkout_coupon button.disabled,
+  .woocommerce form.login button.disabled,
+  .woocommerce form.register button.disabled, .btn:disabled, .woocommerce form.checkout_coupon button:disabled,
+  .woocommerce form.login button:disabled,
+  .woocommerce form.register button:disabled {
     opacity: 0.65; }
-  .btn:not(:disabled):not(.disabled) {
+  .btn:not(:disabled):not(.disabled), .woocommerce form.checkout_coupon button:not(:disabled):not(.disabled),
+  .woocommerce form.login button:not(:disabled):not(.disabled),
+  .woocommerce form.register button:not(:disabled):not(.disabled) {
     cursor: pointer; }
 
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }
 
-.btn-primary {
+.btn-primary, .woocommerce form.checkout_coupon button,
+.woocommerce form.login button,
+.woocommerce form.register button {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff; }
-  .btn-primary:hover {
+  .btn-primary:hover, .woocommerce form.checkout_coupon button:hover,
+  .woocommerce form.login button:hover,
+  .woocommerce form.register button:hover {
     color: #fff;
     background-color: #0069d9;
     border-color: #0062cc; }
-  .btn-primary:focus, .btn-primary.focus {
+  .btn-primary:focus, .woocommerce form.checkout_coupon button:focus,
+  .woocommerce form.login button:focus,
+  .woocommerce form.register button:focus, .btn-primary.focus, .woocommerce form.checkout_coupon button.focus,
+  .woocommerce form.login button.focus,
+  .woocommerce form.register button.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
-  .btn-primary.disabled, .btn-primary:disabled {
+  .btn-primary.disabled, .woocommerce form.checkout_coupon button.disabled,
+  .woocommerce form.login button.disabled,
+  .woocommerce form.register button.disabled, .btn-primary:disabled, .woocommerce form.checkout_coupon button:disabled,
+  .woocommerce form.login button:disabled,
+  .woocommerce form.register button:disabled {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff; }
-  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-  .show > .btn-primary.dropdown-toggle {
+  .btn-primary:not(:disabled):not(.disabled):active, .woocommerce form.checkout_coupon button:not(:disabled):not(.disabled):active,
+  .woocommerce form.login button:not(:disabled):not(.disabled):active,
+  .woocommerce form.register button:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .woocommerce form.checkout_coupon button:not(:disabled):not(.disabled).active,
+  .woocommerce form.login button:not(:disabled):not(.disabled).active,
+  .woocommerce form.register button:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle,
+  .woocommerce form.checkout_coupon .show > button.dropdown-toggle,
+  .woocommerce form.login .show > button.dropdown-toggle,
+  .woocommerce form.register .show > button.dropdown-toggle {
     color: #fff;
     background-color: #0062cc;
     border-color: #005cbf; }
-    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-primary.dropdown-toggle:focus {
+    .btn-primary:not(:disabled):not(.disabled):active:focus, .woocommerce form.checkout_coupon button:not(:disabled):not(.disabled):active:focus,
+    .woocommerce form.login button:not(:disabled):not(.disabled):active:focus,
+    .woocommerce form.register button:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .woocommerce form.checkout_coupon button:not(:disabled):not(.disabled).active:focus,
+    .woocommerce form.login button:not(:disabled):not(.disabled).active:focus,
+    .woocommerce form.register button:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus,
+    .woocommerce form.checkout_coupon .show > button.dropdown-toggle:focus,
+    .woocommerce form.login .show > button.dropdown-toggle:focus,
+    .woocommerce form.register .show > button.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
               box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
 
@@ -2685,13 +2850,17 @@ fieldset:disabled a.btn {
     color: #6c757d;
     pointer-events: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .woocommerce form.checkout_coupon .btn-group-lg > button,
+.woocommerce form.login .btn-group-lg > button,
+.woocommerce form.register .btn-group-lg > button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .woocommerce form.checkout_coupon .btn-group-sm > button,
+.woocommerce form.login .btn-group-sm > button,
+.woocommerce form.register .btn-group-sm > button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2913,27 +3082,104 @@ input[type="button"].btn-block {
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .woocommerce form.checkout_coupon .btn-group > button,
+  .woocommerce form.login .btn-group > button,
+  .woocommerce form.register .btn-group > button,
+  .btn-group-vertical > .btn,
+  .woocommerce form.checkout_coupon .btn-group-vertical > button,
+  .woocommerce form.login .btn-group-vertical > button,
+  .woocommerce form.register .btn-group-vertical > button {
     position: relative;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto; }
-    .btn-group > .btn:hover,
-    .btn-group-vertical > .btn:hover {
+    .btn-group > .btn:hover, .woocommerce form.checkout_coupon .btn-group > button:hover,
+    .woocommerce form.login .btn-group > button:hover,
+    .woocommerce form.register .btn-group > button:hover,
+    .btn-group-vertical > .btn:hover,
+    .woocommerce form.checkout_coupon .btn-group-vertical > button:hover,
+    .woocommerce form.login .btn-group-vertical > button:hover,
+    .woocommerce form.register .btn-group-vertical > button:hover {
       z-index: 1; }
-    .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group > .btn:focus, .woocommerce form.checkout_coupon .btn-group > button:focus,
+    .woocommerce form.login .btn-group > button:focus,
+    .woocommerce form.register .btn-group > button:focus, .btn-group > .btn:active, .woocommerce form.checkout_coupon .btn-group > button:active,
+    .woocommerce form.login .btn-group > button:active,
+    .woocommerce form.register .btn-group > button:active, .btn-group > .btn.active, .woocommerce form.checkout_coupon .btn-group > button.active,
+    .woocommerce form.login .btn-group > button.active,
+    .woocommerce form.register .btn-group > button.active,
     .btn-group-vertical > .btn:focus,
+    .woocommerce form.checkout_coupon .btn-group-vertical > button:focus,
+    .woocommerce form.login .btn-group-vertical > button:focus,
+    .woocommerce form.register .btn-group-vertical > button:focus,
     .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .woocommerce form.checkout_coupon .btn-group-vertical > button:active,
+    .woocommerce form.login .btn-group-vertical > button:active,
+    .woocommerce form.register .btn-group-vertical > button:active,
+    .btn-group-vertical > .btn.active,
+    .woocommerce form.checkout_coupon .btn-group-vertical > button.active,
+    .woocommerce form.login .btn-group-vertical > button.active,
+    .woocommerce form.register .btn-group-vertical > button.active {
       z-index: 1; }
-  .btn-group .btn + .btn,
+  .btn-group .btn + .btn, .btn-group .woocommerce form.checkout_coupon button + .btn, .woocommerce form.checkout_coupon .btn-group button + .btn, .btn-group .woocommerce form.login button + .btn, .woocommerce form.login .btn-group button + .btn, .btn-group .woocommerce form.register button + .btn, .woocommerce form.register .btn-group button + .btn, .btn-group .woocommerce form.checkout_coupon .btn + button, .woocommerce form.checkout_coupon .btn-group .btn + button, .btn-group .woocommerce form.checkout_coupon button + button, .woocommerce form.checkout_coupon .btn-group button + button, .woocommerce form.login .btn-group form.checkout_coupon button + button, .woocommerce form.register .btn-group form.checkout_coupon button + button,
+  .btn-group .woocommerce form.login .btn + button, .woocommerce form.login .btn-group .btn + button, .woocommerce form.checkout_coupon .btn-group form.login button + button,
+  .btn-group .woocommerce form.login button + button, .woocommerce form.login .btn-group button + button, .woocommerce form.register .btn-group form.login button + button,
+  .btn-group .woocommerce form.register .btn + button, .woocommerce form.register .btn-group .btn + button, .woocommerce form.checkout_coupon .btn-group form.register button + button, .woocommerce form.login .btn-group form.register button + button,
+  .btn-group .woocommerce form.register button + button, .woocommerce form.register .btn-group button + button,
   .btn-group .btn + .btn-group,
+  .btn-group .woocommerce form.checkout_coupon button + .btn-group,
+  .woocommerce form.checkout_coupon .btn-group button + .btn-group,
+  .btn-group .woocommerce form.login button + .btn-group,
+  .woocommerce form.login .btn-group button + .btn-group,
+  .btn-group .woocommerce form.register button + .btn-group,
+  .woocommerce form.register .btn-group button + .btn-group,
   .btn-group .btn-group + .btn,
+  .btn-group .woocommerce form.checkout_coupon .btn-group + button,
+  .woocommerce form.checkout_coupon .btn-group .btn-group + button,
+  .btn-group .woocommerce form.login .btn-group + button,
+  .woocommerce form.login .btn-group .btn-group + button,
+  .btn-group .woocommerce form.register .btn-group + button,
+  .woocommerce form.register .btn-group .btn-group + button,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
+  .btn-group-vertical .woocommerce form.checkout_coupon button + .btn,
+  .woocommerce form.checkout_coupon .btn-group-vertical button + .btn,
+  .btn-group-vertical .woocommerce form.login button + .btn,
+  .woocommerce form.login .btn-group-vertical button + .btn,
+  .btn-group-vertical .woocommerce form.register button + .btn,
+  .woocommerce form.register .btn-group-vertical button + .btn,
+  .btn-group-vertical .woocommerce form.checkout_coupon .btn + button,
+  .woocommerce form.checkout_coupon .btn-group-vertical .btn + button,
+  .btn-group-vertical .woocommerce form.checkout_coupon button + button,
+  .woocommerce form.checkout_coupon .btn-group-vertical button + button,
+  .woocommerce form.login .btn-group-vertical form.checkout_coupon button + button,
+  .woocommerce form.register .btn-group-vertical form.checkout_coupon button + button,
+  .btn-group-vertical .woocommerce form.login .btn + button,
+  .woocommerce form.login .btn-group-vertical .btn + button,
+  .woocommerce form.checkout_coupon .btn-group-vertical form.login button + button,
+  .btn-group-vertical .woocommerce form.login button + button,
+  .woocommerce form.login .btn-group-vertical button + button,
+  .woocommerce form.register .btn-group-vertical form.login button + button,
+  .btn-group-vertical .woocommerce form.register .btn + button,
+  .woocommerce form.register .btn-group-vertical .btn + button,
+  .woocommerce form.checkout_coupon .btn-group-vertical form.register button + button,
+  .woocommerce form.login .btn-group-vertical form.register button + button,
+  .btn-group-vertical .woocommerce form.register button + button,
+  .woocommerce form.register .btn-group-vertical button + button,
   .btn-group-vertical .btn + .btn-group,
+  .btn-group-vertical .woocommerce form.checkout_coupon button + .btn-group,
+  .woocommerce form.checkout_coupon .btn-group-vertical button + .btn-group,
+  .btn-group-vertical .woocommerce form.login button + .btn-group,
+  .woocommerce form.login .btn-group-vertical button + .btn-group,
+  .btn-group-vertical .woocommerce form.register button + .btn-group,
+  .woocommerce form.register .btn-group-vertical button + .btn-group,
   .btn-group-vertical .btn-group + .btn,
+  .btn-group-vertical .woocommerce form.checkout_coupon .btn-group + button,
+  .woocommerce form.checkout_coupon .btn-group-vertical .btn-group + button,
+  .btn-group-vertical .woocommerce form.login .btn-group + button,
+  .woocommerce form.login .btn-group-vertical .btn-group + button,
+  .btn-group-vertical .woocommerce form.register .btn-group + button,
+  .woocommerce form.register .btn-group-vertical .btn-group + button,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -2949,16 +3195,28 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .woocommerce form.checkout_coupon .btn-group > button:first-child,
+.woocommerce form.login .btn-group > button:first-child,
+.woocommerce form.register .btn-group > button:first-child {
   margin-left: 0; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .woocommerce form.checkout_coupon .btn-group > button:not(:last-child):not(.dropdown-toggle),
+.woocommerce form.login .btn-group > button:not(:last-child):not(.dropdown-toggle),
+.woocommerce form.register .btn-group > button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.woocommerce form.checkout_coupon .btn-group > .btn-group:not(:last-child) > button,
+.woocommerce form.login .btn-group > .btn-group:not(:last-child) > button,
+.woocommerce form.register .btn-group > .btn-group:not(:last-child) > button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:not(:first-child),
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > .btn:not(:first-child), .woocommerce form.checkout_coupon .btn-group > button:not(:first-child),
+.woocommerce form.login .btn-group > button:not(:first-child),
+.woocommerce form.register .btn-group > button:not(:first-child),
+.btn-group > .btn-group:not(:first-child) > .btn,
+.woocommerce form.checkout_coupon .btn-group > .btn-group:not(:first-child) > button,
+.woocommerce form.login .btn-group > .btn-group:not(:first-child) > button,
+.woocommerce form.register .btn-group > .btn-group:not(:first-child) > button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2972,11 +3230,11 @@ input[type="button"].btn-block {
   .dropleft .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .woocommerce form.checkout_coupon .btn-group-sm > button + .dropdown-toggle-split, .woocommerce form.login .btn-group-sm > button + .dropdown-toggle-split, .woocommerce form.register .btn-group-sm > button + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .woocommerce form.checkout_coupon .btn-group-lg > button + .dropdown-toggle-split, .woocommerce form.login .btn-group-lg > button + .dropdown-toggle-split, .woocommerce form.register .btn-group-lg > button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2991,31 +3249,67 @@ input[type="button"].btn-block {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .btn-group-vertical .btn,
+  .btn-group-vertical .btn, .btn-group-vertical .woocommerce form.checkout_coupon button, .woocommerce form.checkout_coupon .btn-group-vertical button,
+  .btn-group-vertical .woocommerce form.login button, .woocommerce form.login .btn-group-vertical button,
+  .btn-group-vertical .woocommerce form.register button, .woocommerce form.register .btn-group-vertical button,
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn,
+  .btn-group-vertical > .btn + .btn, .woocommerce form.checkout_coupon .btn-group-vertical > button + .btn, .woocommerce form.login .btn-group-vertical > button + .btn, .woocommerce form.register .btn-group-vertical > button + .btn, .woocommerce form.checkout_coupon .btn-group-vertical > .btn + button, .woocommerce form.checkout_coupon .btn-group-vertical > button + button,
+  .woocommerce form.login .btn-group-vertical > .btn + button,
+  .woocommerce form.login .btn-group-vertical > button + button,
+  .woocommerce form.register .btn-group-vertical > .btn + button,
+  .woocommerce form.register .btn-group-vertical > button + button,
   .btn-group-vertical > .btn + .btn-group,
+  .woocommerce form.checkout_coupon .btn-group-vertical > button + .btn-group,
+  .woocommerce form.login .btn-group-vertical > button + .btn-group,
+  .woocommerce form.register .btn-group-vertical > button + .btn-group,
   .btn-group-vertical > .btn-group + .btn,
+  .woocommerce form.checkout_coupon .btn-group-vertical > .btn-group + button,
+  .woocommerce form.login .btn-group-vertical > .btn-group + button,
+  .woocommerce form.register .btn-group-vertical > .btn-group + button,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-  .btn-group-vertical > .btn-group:not(:last-child) > .btn {
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .woocommerce form.checkout_coupon .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+  .woocommerce form.login .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+  .woocommerce form.register .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+  .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+  .woocommerce form.checkout_coupon .btn-group-vertical > .btn-group:not(:last-child) > button,
+  .woocommerce form.login .btn-group-vertical > .btn-group:not(:last-child) > button,
+  .woocommerce form.register .btn-group-vertical > .btn-group:not(:last-child) > button {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:not(:first-child),
-  .btn-group-vertical > .btn-group:not(:first-child) > .btn {
+  .btn-group-vertical > .btn:not(:first-child), .woocommerce form.checkout_coupon .btn-group-vertical > button:not(:first-child),
+  .woocommerce form.login .btn-group-vertical > button:not(:first-child),
+  .woocommerce form.register .btn-group-vertical > button:not(:first-child),
+  .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+  .woocommerce form.checkout_coupon .btn-group-vertical > .btn-group:not(:first-child) > button,
+  .woocommerce form.login .btn-group-vertical > .btn-group:not(:first-child) > button,
+  .woocommerce form.register .btn-group-vertical > .btn-group:not(:first-child) > button {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group-toggle > .btn,
-.btn-group-toggle > .btn-group > .btn {
+.btn-group-toggle > .btn, .woocommerce form.checkout_coupon .btn-group-toggle > button,
+.woocommerce form.login .btn-group-toggle > button,
+.woocommerce form.register .btn-group-toggle > button,
+.btn-group-toggle > .btn-group > .btn,
+.woocommerce form.checkout_coupon .btn-group-toggle > .btn-group > button,
+.woocommerce form.login .btn-group-toggle > .btn-group > button,
+.woocommerce form.register .btn-group-toggle > .btn-group > button {
   margin-bottom: 0; }
-  .btn-group-toggle > .btn input[type="radio"],
+  .btn-group-toggle > .btn input[type="radio"], .woocommerce form.checkout_coupon .btn-group-toggle > button input[type="radio"], .woocommerce form.login .btn-group-toggle > button input[type="radio"], .woocommerce form.register .btn-group-toggle > button input[type="radio"],
   .btn-group-toggle > .btn input[type="checkbox"],
+  .woocommerce form.checkout_coupon .btn-group-toggle > button input[type="checkbox"],
+  .woocommerce form.login .btn-group-toggle > button input[type="checkbox"],
+  .woocommerce form.register .btn-group-toggle > button input[type="checkbox"],
   .btn-group-toggle > .btn-group > .btn input[type="radio"],
-  .btn-group-toggle > .btn-group > .btn input[type="checkbox"] {
+  .woocommerce form.checkout_coupon .btn-group-toggle > .btn-group > button input[type="radio"],
+  .woocommerce form.login .btn-group-toggle > .btn-group > button input[type="radio"],
+  .woocommerce form.register .btn-group-toggle > .btn-group > button input[type="radio"],
+  .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+  .woocommerce form.checkout_coupon .btn-group-toggle > .btn-group > button input[type="checkbox"],
+  .woocommerce form.login .btn-group-toggle > .btn-group > button input[type="checkbox"],
+  .woocommerce form.register .btn-group-toggle > .btn-group > button input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none; }
@@ -3031,7 +3325,11 @@ input[type="button"].btn-block {
       -ms-flex-align: stretch;
           align-items: stretch;
   width: 100%; }
-  .input-group > .form-control,
+  .input-group > .form-control, .woocommerce form.checkout_coupon .input-group > input[type='text'], .woocommerce form.checkout_coupon .input-group > input[type='password'],
+  .woocommerce form.login .input-group > input[type='text'],
+  .woocommerce form.login .input-group > input[type='password'],
+  .woocommerce form.register .input-group > input[type='text'],
+  .woocommerce form.register .input-group > input[type='password'], .input-group > .input-text,
   .input-group > .custom-select,
   .input-group > .custom-file {
     position: relative;
@@ -3040,27 +3338,83 @@ input[type="button"].btn-block {
             flex: 1 1 auto;
     width: 1%;
     margin-bottom: 0; }
-    .input-group > .form-control + .form-control,
+    .input-group > .form-control + .form-control, .woocommerce form.checkout_coupon .input-group > input[type='text'] + .form-control, .woocommerce form.checkout_coupon .input-group > input[type='password'] + .form-control, .woocommerce form.login .input-group > input[type='text'] + .form-control, .woocommerce form.login .input-group > input[type='password'] + .form-control, .woocommerce form.register .input-group > input[type='text'] + .form-control, .woocommerce form.register .input-group > input[type='password'] + .form-control, .input-group > .input-text + .form-control, .woocommerce form.checkout_coupon .input-group > .form-control + input[type='text'], .woocommerce form.checkout_coupon .input-group > input[type='text'] + input[type='text'], .woocommerce form.checkout_coupon .input-group > input[type='password'] + input[type='text'], .woocommerce form.checkout_coupon .input-group > .input-text + input[type='text'], .woocommerce form.checkout_coupon .input-group > .form-control + input[type='password'], .woocommerce form.checkout_coupon .input-group > input[type='text'] + input[type='password'], .woocommerce form.checkout_coupon .input-group > input[type='password'] + input[type='password'], .woocommerce form.checkout_coupon .input-group > .input-text + input[type='password'],
+    .woocommerce form.login .input-group > .form-control + input[type='text'],
+    .woocommerce form.login .input-group > input[type='text'] + input[type='text'],
+    .woocommerce form.login .input-group > input[type='password'] + input[type='text'],
+    .woocommerce form.login .input-group > .input-text + input[type='text'],
+    .woocommerce form.login .input-group > .form-control + input[type='password'],
+    .woocommerce form.login .input-group > input[type='text'] + input[type='password'],
+    .woocommerce form.login .input-group > input[type='password'] + input[type='password'],
+    .woocommerce form.login .input-group > .input-text + input[type='password'],
+    .woocommerce form.register .input-group > .form-control + input[type='text'],
+    .woocommerce form.register .input-group > input[type='text'] + input[type='text'],
+    .woocommerce form.register .input-group > input[type='password'] + input[type='text'],
+    .woocommerce form.register .input-group > .input-text + input[type='text'],
+    .woocommerce form.register .input-group > .form-control + input[type='password'],
+    .woocommerce form.register .input-group > input[type='text'] + input[type='password'],
+    .woocommerce form.register .input-group > input[type='password'] + input[type='password'],
+    .woocommerce form.register .input-group > .input-text + input[type='password'], .input-group > .form-control + .input-text, .woocommerce form.checkout_coupon .input-group > input[type='text'] + .input-text, .woocommerce form.checkout_coupon .input-group > input[type='password'] + .input-text, .woocommerce form.login .input-group > input[type='text'] + .input-text, .woocommerce form.login .input-group > input[type='password'] + .input-text, .woocommerce form.register .input-group > input[type='text'] + .input-text, .woocommerce form.register .input-group > input[type='password'] + .input-text, .input-group > .input-text + .input-text,
     .input-group > .form-control + .custom-select,
+    .woocommerce form.checkout_coupon .input-group > input[type='text'] + .custom-select,
+    .woocommerce form.checkout_coupon .input-group > input[type='password'] + .custom-select,
+    .woocommerce form.login .input-group > input[type='text'] + .custom-select,
+    .woocommerce form.login .input-group > input[type='password'] + .custom-select,
+    .woocommerce form.register .input-group > input[type='text'] + .custom-select,
+    .woocommerce form.register .input-group > input[type='password'] + .custom-select,
+    .input-group > .input-text + .custom-select,
     .input-group > .form-control + .custom-file,
+    .woocommerce form.checkout_coupon .input-group > input[type='text'] + .custom-file,
+    .woocommerce form.checkout_coupon .input-group > input[type='password'] + .custom-file,
+    .woocommerce form.login .input-group > input[type='text'] + .custom-file,
+    .woocommerce form.login .input-group > input[type='password'] + .custom-file,
+    .woocommerce form.register .input-group > input[type='text'] + .custom-file,
+    .woocommerce form.register .input-group > input[type='password'] + .custom-file,
+    .input-group > .input-text + .custom-file,
     .input-group > .custom-select + .form-control,
+    .woocommerce form.checkout_coupon .input-group > .custom-select + input[type='text'],
+    .woocommerce form.checkout_coupon .input-group > .custom-select + input[type='password'],
+    .woocommerce form.login .input-group > .custom-select + input[type='text'],
+    .woocommerce form.login .input-group > .custom-select + input[type='password'],
+    .woocommerce form.register .input-group > .custom-select + input[type='text'],
+    .woocommerce form.register .input-group > .custom-select + input[type='password'],
+    .input-group > .custom-select + .input-text,
     .input-group > .custom-select + .custom-select,
     .input-group > .custom-select + .custom-file,
     .input-group > .custom-file + .form-control,
+    .woocommerce form.checkout_coupon .input-group > .custom-file + input[type='text'],
+    .woocommerce form.checkout_coupon .input-group > .custom-file + input[type='password'],
+    .woocommerce form.login .input-group > .custom-file + input[type='text'],
+    .woocommerce form.login .input-group > .custom-file + input[type='password'],
+    .woocommerce form.register .input-group > .custom-file + input[type='text'],
+    .woocommerce form.register .input-group > .custom-file + input[type='password'],
+    .input-group > .custom-file + .input-text,
     .input-group > .custom-file + .custom-select,
     .input-group > .custom-file + .custom-file {
       margin-left: -1px; }
-  .input-group > .form-control:focus,
+  .input-group > .form-control:focus, .woocommerce form.checkout_coupon .input-group > input:focus[type='text'], .woocommerce form.checkout_coupon .input-group > input:focus[type='password'],
+  .woocommerce form.login .input-group > input:focus[type='text'],
+  .woocommerce form.login .input-group > input:focus[type='password'],
+  .woocommerce form.register .input-group > input:focus[type='text'],
+  .woocommerce form.register .input-group > input:focus[type='password'], .input-group > .input-text:focus,
   .input-group > .custom-select:focus,
   .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
     z-index: 3; }
   .input-group > .custom-file .custom-file-input:focus {
     z-index: 4; }
-  .input-group > .form-control:not(:last-child),
+  .input-group > .form-control:not(:last-child), .woocommerce form.checkout_coupon .input-group > input:not(:last-child)[type='text'], .woocommerce form.checkout_coupon .input-group > input:not(:last-child)[type='password'],
+  .woocommerce form.login .input-group > input:not(:last-child)[type='text'],
+  .woocommerce form.login .input-group > input:not(:last-child)[type='password'],
+  .woocommerce form.register .input-group > input:not(:last-child)[type='text'],
+  .woocommerce form.register .input-group > input:not(:last-child)[type='password'], .input-group > .input-text:not(:last-child),
   .input-group > .custom-select:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
-  .input-group > .form-control:not(:first-child),
+  .input-group > .form-control:not(:first-child), .woocommerce form.checkout_coupon .input-group > input:not(:first-child)[type='text'], .woocommerce form.checkout_coupon .input-group > input:not(:first-child)[type='password'],
+  .woocommerce form.login .input-group > input:not(:first-child)[type='text'],
+  .woocommerce form.login .input-group > input:not(:first-child)[type='password'],
+  .woocommerce form.register .input-group > input:not(:first-child)[type='text'],
+  .woocommerce form.register .input-group > input:not(:first-child)[type='password'], .input-group > .input-text:not(:first-child),
   .input-group > .custom-select:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
@@ -3084,18 +3438,78 @@ input[type="button"].btn-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  .input-group-prepend .btn,
-  .input-group-append .btn {
+  .input-group-prepend .btn, .input-group-prepend .woocommerce form.checkout_coupon button, .woocommerce form.checkout_coupon .input-group-prepend button,
+  .input-group-prepend .woocommerce form.login button, .woocommerce form.login .input-group-prepend button,
+  .input-group-prepend .woocommerce form.register button, .woocommerce form.register .input-group-prepend button,
+  .input-group-append .btn,
+  .input-group-append .woocommerce form.checkout_coupon button,
+  .woocommerce form.checkout_coupon .input-group-append button,
+  .input-group-append .woocommerce form.login button,
+  .woocommerce form.login .input-group-append button,
+  .input-group-append .woocommerce form.register button,
+  .woocommerce form.register .input-group-append button {
     position: relative;
     z-index: 2; }
-  .input-group-prepend .btn + .btn,
+  .input-group-prepend .btn + .btn, .input-group-prepend .woocommerce form.checkout_coupon button + .btn, .woocommerce form.checkout_coupon .input-group-prepend button + .btn, .input-group-prepend .woocommerce form.login button + .btn, .woocommerce form.login .input-group-prepend button + .btn, .input-group-prepend .woocommerce form.register button + .btn, .woocommerce form.register .input-group-prepend button + .btn, .input-group-prepend .woocommerce form.checkout_coupon .btn + button, .woocommerce form.checkout_coupon .input-group-prepend .btn + button, .input-group-prepend .woocommerce form.checkout_coupon button + button, .woocommerce form.checkout_coupon .input-group-prepend button + button, .woocommerce form.login .input-group-prepend form.checkout_coupon button + button, .woocommerce form.register .input-group-prepend form.checkout_coupon button + button,
+  .input-group-prepend .woocommerce form.login .btn + button, .woocommerce form.login .input-group-prepend .btn + button, .woocommerce form.checkout_coupon .input-group-prepend form.login button + button,
+  .input-group-prepend .woocommerce form.login button + button, .woocommerce form.login .input-group-prepend button + button, .woocommerce form.register .input-group-prepend form.login button + button,
+  .input-group-prepend .woocommerce form.register .btn + button, .woocommerce form.register .input-group-prepend .btn + button, .woocommerce form.checkout_coupon .input-group-prepend form.register button + button, .woocommerce form.login .input-group-prepend form.register button + button,
+  .input-group-prepend .woocommerce form.register button + button, .woocommerce form.register .input-group-prepend button + button,
   .input-group-prepend .btn + .input-group-text,
+  .input-group-prepend .woocommerce form.checkout_coupon button + .input-group-text,
+  .woocommerce form.checkout_coupon .input-group-prepend button + .input-group-text,
+  .input-group-prepend .woocommerce form.login button + .input-group-text,
+  .woocommerce form.login .input-group-prepend button + .input-group-text,
+  .input-group-prepend .woocommerce form.register button + .input-group-text,
+  .woocommerce form.register .input-group-prepend button + .input-group-text,
   .input-group-prepend .input-group-text + .input-group-text,
   .input-group-prepend .input-group-text + .btn,
+  .input-group-prepend .woocommerce form.checkout_coupon .input-group-text + button,
+  .woocommerce form.checkout_coupon .input-group-prepend .input-group-text + button,
+  .input-group-prepend .woocommerce form.login .input-group-text + button,
+  .woocommerce form.login .input-group-prepend .input-group-text + button,
+  .input-group-prepend .woocommerce form.register .input-group-text + button,
+  .woocommerce form.register .input-group-prepend .input-group-text + button,
   .input-group-append .btn + .btn,
+  .input-group-append .woocommerce form.checkout_coupon button + .btn,
+  .woocommerce form.checkout_coupon .input-group-append button + .btn,
+  .input-group-append .woocommerce form.login button + .btn,
+  .woocommerce form.login .input-group-append button + .btn,
+  .input-group-append .woocommerce form.register button + .btn,
+  .woocommerce form.register .input-group-append button + .btn,
+  .input-group-append .woocommerce form.checkout_coupon .btn + button,
+  .woocommerce form.checkout_coupon .input-group-append .btn + button,
+  .input-group-append .woocommerce form.checkout_coupon button + button,
+  .woocommerce form.checkout_coupon .input-group-append button + button,
+  .woocommerce form.login .input-group-append form.checkout_coupon button + button,
+  .woocommerce form.register .input-group-append form.checkout_coupon button + button,
+  .input-group-append .woocommerce form.login .btn + button,
+  .woocommerce form.login .input-group-append .btn + button,
+  .woocommerce form.checkout_coupon .input-group-append form.login button + button,
+  .input-group-append .woocommerce form.login button + button,
+  .woocommerce form.login .input-group-append button + button,
+  .woocommerce form.register .input-group-append form.login button + button,
+  .input-group-append .woocommerce form.register .btn + button,
+  .woocommerce form.register .input-group-append .btn + button,
+  .woocommerce form.checkout_coupon .input-group-append form.register button + button,
+  .woocommerce form.login .input-group-append form.register button + button,
+  .input-group-append .woocommerce form.register button + button,
+  .woocommerce form.register .input-group-append button + button,
   .input-group-append .btn + .input-group-text,
+  .input-group-append .woocommerce form.checkout_coupon button + .input-group-text,
+  .woocommerce form.checkout_coupon .input-group-append button + .input-group-text,
+  .input-group-append .woocommerce form.login button + .input-group-text,
+  .woocommerce form.login .input-group-append button + .input-group-text,
+  .input-group-append .woocommerce form.register button + .input-group-text,
+  .woocommerce form.register .input-group-append button + .input-group-text,
   .input-group-append .input-group-text + .input-group-text,
-  .input-group-append .input-group-text + .btn {
+  .input-group-append .input-group-text + .btn,
+  .input-group-append .woocommerce form.checkout_coupon .input-group-text + button,
+  .woocommerce form.checkout_coupon .input-group-append .input-group-text + button,
+  .input-group-append .woocommerce form.login .input-group-text + button,
+  .woocommerce form.login .input-group-append .input-group-text + button,
+  .input-group-append .woocommerce form.register .input-group-text + button,
+  .woocommerce form.register .input-group-append .input-group-text + button {
     margin-left: -1px; }
 
 .input-group-prepend {
@@ -3126,42 +3540,78 @@ input[type="button"].btn-block {
   .input-group-text input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group-lg > .form-control,
+.input-group-lg > .form-control, .woocommerce form.checkout_coupon .input-group-lg > input[type='text'], .woocommerce form.checkout_coupon .input-group-lg > input[type='password'],
+.woocommerce form.login .input-group-lg > input[type='text'],
+.woocommerce form.login .input-group-lg > input[type='password'],
+.woocommerce form.register .input-group-lg > input[type='text'],
+.woocommerce form.register .input-group-lg > input[type='password'], .input-group-lg > .input-text,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
-.input-group-lg > .input-group-append > .btn {
+.woocommerce form.checkout_coupon .input-group-lg > .input-group-prepend > button,
+.woocommerce form.login .input-group-lg > .input-group-prepend > button,
+.woocommerce form.register .input-group-lg > .input-group-prepend > button,
+.input-group-lg > .input-group-append > .btn,
+.woocommerce form.checkout_coupon .input-group-lg > .input-group-append > button,
+.woocommerce form.login .input-group-lg > .input-group-append > button,
+.woocommerce form.register .input-group-lg > .input-group-append > button {
   height: calc(2.875rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.input-group-sm > .form-control,
+.input-group-sm > .form-control, .woocommerce form.checkout_coupon .input-group-sm > input[type='text'], .woocommerce form.checkout_coupon .input-group-sm > input[type='password'],
+.woocommerce form.login .input-group-sm > input[type='text'],
+.woocommerce form.login .input-group-sm > input[type='password'],
+.woocommerce form.register .input-group-sm > input[type='text'],
+.woocommerce form.register .input-group-sm > input[type='password'], .input-group-sm > .input-text,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
-.input-group-sm > .input-group-append > .btn {
+.woocommerce form.checkout_coupon .input-group-sm > .input-group-prepend > button,
+.woocommerce form.login .input-group-sm > .input-group-prepend > button,
+.woocommerce form.register .input-group-sm > .input-group-prepend > button,
+.input-group-sm > .input-group-append > .btn,
+.woocommerce form.checkout_coupon .input-group-sm > .input-group-append > button,
+.woocommerce form.login .input-group-sm > .input-group-append > button,
+.woocommerce form.register .input-group-sm > .input-group-append > button {
   height: calc(1.8125rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
-.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .btn, .woocommerce form.checkout_coupon .input-group > .input-group-prepend > button,
+.woocommerce form.login .input-group > .input-group-prepend > button,
+.woocommerce form.register .input-group > .input-group-prepend > button,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
+.woocommerce form.checkout_coupon .input-group > .input-group-append:not(:last-child) > button,
+.woocommerce form.login .input-group > .input-group-append:not(:last-child) > button,
+.woocommerce form.register .input-group > .input-group-append:not(:last-child) > button,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.woocommerce form.checkout_coupon .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
+.woocommerce form.login .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
+.woocommerce form.register .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .btn, .woocommerce form.checkout_coupon .input-group > .input-group-append > button,
+.woocommerce form.login .input-group > .input-group-append > button,
+.woocommerce form.register .input-group > .input-group-append > button,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+.woocommerce form.checkout_coupon .input-group > .input-group-prepend:not(:first-child) > button,
+.woocommerce form.login .input-group > .input-group-prepend:not(:first-child) > button,
+.woocommerce form.register .input-group > .input-group-prepend:not(:first-child) > button,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.woocommerce form.checkout_coupon .input-group > .input-group-prepend:first-child > button:not(:first-child),
+.woocommerce form.login .input-group > .input-group-prepend:first-child > button:not(:first-child),
+.woocommerce form.register .input-group > .input-group-prepend:first-child > button:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -4235,7 +4685,7 @@ input[type="button"].btn-block {
   .badge:empty {
     display: none; }
 
-.btn .badge {
+.btn .badge, .woocommerce form.checkout_coupon button .badge, .woocommerce form.login button .badge, .woocommerce form.register button .badge {
   position: relative;
   top: -1px; }
 
@@ -7561,10 +8011,11 @@ a.text-dark:hover, a.text-dark:focus {
     display: none; }
   .badge {
     border: 1px solid #000; }
-  .table {
+  .table, table {
     border-collapse: collapse !important; }
+    
     .table td,
-    .table th {
+    table td, .table th, table th {
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
@@ -7576,7 +8027,7 @@ a.text-dark:hover, a.text-dark:focus {
     .table-dark thead th,
     .table-dark tbody + tbody {
       border-color: #dee2e6; }
-  .table .thead-dark th {
+  .table .thead-dark th, table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
 
@@ -13898,6 +14349,92 @@ body.compensate-for-scrollbar {
   .fancybox-thumbs__list a {
     max-width: calc(100% - 10px); } }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+.slick-list:focus {
+  outline: none; }
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: ''; }
+
+.slick-track:after {
+  clear: both; }
+
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px; }
+
+[dir='rtl'] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+
+.slick-slide.slick-loading img {
+  display: none; }
+
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 /* Custom Mixins -------------------- */
 body {
   font-family: "Muli", Helvetica, Verdana, sans-serif;
@@ -13910,26 +14447,36 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%; }
 
 a {
-  color: #493E6F;
+  color: #4D437B;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: none; }
   a.link-item {
     font-weight: bold; }
     a.link-item:hover, a.link-item:focus {
-      color: #493E6F;
+      color: #4D437B;
       text-decoration: none; }
 
-.btn {
+.btn, .woocommerce form.checkout_coupon button,
+.woocommerce form.login button,
+.woocommerce form.register button {
   font-weight: 700; }
 
-.btn-primary {
+.btn-primary, .woocommerce form.checkout_coupon button,
+.woocommerce form.login button,
+.woocommerce form.register button {
   color: #fff;
-  background: #493E6F;
-  border-color: #493E6F; }
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background: #3e355f;
-    border-color: #3e355f; }
+  background: #4D437B;
+  border-color: #4D437B; }
+  .btn-primary:hover, .woocommerce form.checkout_coupon button:hover,
+  .woocommerce form.login button:hover,
+  .woocommerce form.register button:hover, .btn-primary:focus, .woocommerce form.checkout_coupon button:focus,
+  .woocommerce form.login button:focus,
+  .woocommerce form.register button:focus, .btn-primary:active, .woocommerce form.checkout_coupon button:active,
+  .woocommerce form.login button:active,
+  .woocommerce form.register button:active {
+    background: #433a6a;
+    border-color: #433a6a; }
 
 .btn-secondary {
   color: #fff;
@@ -13939,9 +14486,13 @@ a {
     background: #12d091;
     border-color: #12d091; }
 
+.page-template-default h2 {
+  font-weight: 600;
+  font-size: 1.5rem; }
+
 .hl-navbar {
   min-height: 4rem;
-  background-color: #493E6F;
+  background-color: #4D437B;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
 
@@ -13951,9 +14502,47 @@ a {
     width: 100%;
     height: auto; }
 
+.navbar-dark .navbar-toggler {
+  border: none; }
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+
+.navbar-dark .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+  color: #433;
+  font-weight: 700;
+  font-size: 14px; }
+  .navbar-dark .navbar-nav .nav-item .dropdown-menu .dropdown-item:focus {
+    color: #fff; }
+
+.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .nav-item a {
+  font-weight: 600;
+  font-size: 15px;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.5); }
+  .navbar-dark .navbar-nav .nav-link.cart-icon img, .navbar-dark .navbar-nav .nav-item a.cart-icon img {
+    width: 20px; }
+  .navbar-dark .navbar-nav .nav-link.search-icon img, .navbar-dark .navbar-nav .nav-item a.search-icon img {
+    width: 20px; }
+
+.dropdown-item {
+  font-weight: 600;
+  font-size: 15px; }
+  .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #4D437B; }
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem; } }
+
 .footer {
   border-top: 1px solid #eee;
-  padding: 50px 0 70px; }
+  padding: 50px 0 70px;
+  background: #fff; }
   .footer a, .footer p {
     font-size: 0.9rem; }
   .footer .social-list li {
@@ -13964,7 +14553,7 @@ a {
       display: block;
       width: 30px;
       height: 30px;
-      background: #493E6F;
+      background: #4D437B;
       color: #fff;
       border-radius: 25px;
       font-size: 15px;
@@ -13972,11 +14561,23 @@ a {
 
 .home {
   padding-bottom: 50px; }
+  .home .homecarousel, .home .carousel-inner, .home .carousel-item, .home .carousel-item img {
+    height: 100vh; }
+  .home .homecarousel .carousel-item img {
+    width: auto; }
+  .home .carousel-caption {
+    font-size: 40px;
+    top: 90px;
+    bottom: auto; }
+  .home .carousel-control-prev:hover, .home .carousel-control-prev:focus, .home .carousel-control-next:hover, .home .carousel-control-next:focus {
+    z-index: 9; }
+  .home .carousel-indicators .active {
+    background: #14e7a1; }
   .home .home-search {
     position: absolute;
     z-index: 2;
     width: 100%;
-    top: 6.5rem; }
+    top: 10.5rem; }
     .home .home-search h1 {
       color: #fff; }
   .home .home-categories {
@@ -13984,23 +14585,31 @@ a {
     padding-left: 15px; }
     .home .home-categories .home-category {
       width: 22%;
-      border: 1px solid #493E6F;
+      border: 1px solid #4D437B;
       border-radius: 0.25rem;
       font-weight: 700;
       padding: 20px 0 20px 15px;
       text-decoration: none; }
       .home .home-categories .home-category img {
-        margin-right: 10px; }
+        margin-right: 10px;
+        width: 25px;
+        height: auto; }
       .home .home-categories .home-category span {
         color: #433; }
       .home .home-categories .home-category:hover, .home .home-categories .home-category:focus {
-        background: #493E6F; }
+        background: #4D437B; }
         .home .home-categories .home-category:hover span, .home .home-categories .home-category:focus span {
           color: #fff; }
+  @media (min-width: 768px) {
+    .home .homecarousel, .home .carousel-inner, .home .carousel-item, .home .carousel-item img {
+      height: auto; }
+    .home .homecarousel .carousel-item img {
+      width: 100%; } }
 
 .product {
   text-decoration: none;
-  color: #433; }
+  color: #433;
+  position: relative; }
   .product:hover, .product:focus {
     text-decoration: none;
     color: #433; }
@@ -14020,14 +14629,186 @@ a {
               align-items: center;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
-              justify-content: center; }
-      .product.lg-size .img-wrapper img {
-        height: 100%;
-        width: auto; }
+              justify-content: center;
+      border-radius: 10px; }
+      .product.lg-size .img-wrapper .img-container {
+        width: 100%;
+        height: 100%; }
+        .product.lg-size .img-wrapper .img-container img {
+          height: 100%;
+          width: auto; }
+  .product .discount {
+    position: absolute;
+    z-index: 2;
+    left: 5px;
+    top: 5px;
+    background: #14e7a1;
+    color: #4D437B;
+    border-radius: 4px;
+    padding: 15px;
+    font-weight: 700;
+    max-width: 110px; }
   .product .description {
     font-size: 0.9rem; }
   .product .price {
-    color: #493E6F;
+    color: #4D437B;
     font-weight: 700; }
+
+.woocommerce-account {
+  background: #F7F9FD; }
+
+.woocommerce-MyAccount-navigation {
+  width: 100%;
+  padding: 20px 15px;
+  float: left;
+  border: 1px solid #E0E4E7;
+  border-radius: 4px;
+  margin-bottom: 100px;
+  background: #fff; }
+  .woocommerce-MyAccount-navigation ul li {
+    padding: 10px 15px; }
+    .woocommerce-MyAccount-navigation ul li a {
+      font-weight: 700;
+      font-size: 15px; }
+      .woocommerce-MyAccount-navigation ul li a:hover {
+        color: #433a6a; }
+
+.woocommerce-MyAccount-content {
+  width: calc(100% - 230px);
+  float: left;
+  padding: 0px 15px; }
+
+@media (min-width: 992px) {
+  .woocommerce-MyAccount-navigation {
+    width: 230px; } }
+
+.woocommerce-info {
+  border: 1px solid #4D437B;
+  border-radius: 4px;
+  color: #fff;
+  background: #4D437B; }
+
+.woocommerce form.checkout_coupon,
+.woocommerce form.login,
+.woocommerce form.register {
+  background: #fff; }
+  .woocommerce form.checkout_coupon .woocommerce form .form-row label,
+  .woocommerce form.login .woocommerce form .form-row label,
+  .woocommerce form.register .woocommerce form .form-row label {
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 700; }
+
+.breadcrumb {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0; }
+
+/* Single Product  */
+.single-product .content-area .container {
+  padding: 0; }
+
+.single-product .woocommerce div.product form.cart .group_table td {
+  vertical-align: middle; }
+
+.single-product .woocommerce-grouped-product-list-item__label label,
+.single-product .woocommerce div.product form.cart .group_table td label {
+  margin-bottom: 0; }
+
+/* WooCommerce 3.0 Gallery */
+.woocommerce-product-gallery {
+  position: relative;
+  margin-bottom: 3em; }
+
+.woocommerce-product-gallery figure {
+  margin: 0;
+  max-width: none; }
+
+.woocommerce-product-gallery .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 25%;
+  display: inline-block; }
+
+.woocommerce-product-gallery .flex-control-thumbs li {
+  list-style: none;
+  float: left;
+  cursor: pointer; }
+
+.woocommerce-product-gallery .flex-control-thumbs img {
+  opacity: .5; }
+
+.woocommerce div.product div.images.woocommerce-product-gallery, .woocommerce-product-gallery .flex-control-thumbs img.flex-active, .woocommerce-product-gallery .flex-control-thumbs img:hover {
+  opacity: 1 !important; }
+
+.woocommerce-product-gallery img {
+  display: block; }
+
+.woocommerce-product-gallery--columns-3 .flex-control-thumbs li {
+  width: 33.3333%; }
+
+.woocommerce-product-gallery--columns-4 .flex-control-thumbs li {
+  width: 25%; }
+
+.woocommerce-product-gallery--columns-5 .flex-control-thumbs li {
+  width: 20%; }
+
+.woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 99; }
+
+a.woocommerce-product-gallery__trigger {
+  text-decoration: none; }
+
+.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: .875em;
+  right: .875em;
+  display: block;
+  height: 2em;
+  width: 2em;
+  border-radius: 3px;
+  z-index: 99;
+  text-align: center;
+  text-indent: -999px;
+  overflow: hidden; }
+
+.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+  background-color: #169fda;
+  color: #ffffff; }
+
+.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:hover {
+  background-color: #1781ae;
+  border-color: #1781ae;
+  color: #ffffff; }
+
+.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:before {
+  font: normal normal normal 1em/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+  content: "\f00e";
+  line-height: 2;
+  text-indent: 0; }
+
+/* Checkout */
+@media (min-width: 768px) {
+  #customer_details {
+    width: 60%;
+    float: left; }
+  #order_review_heading {
+    width: 30%;
+    float: left; }
+  #order_review {
+    width: 40%;
+    float: left;
+    padding-right: 50px; }
+  .woocommerce table.shop_table td {
+    width: 50%; }
+  .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1,
+  .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

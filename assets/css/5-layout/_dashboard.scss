@@ -1,0 +1,38 @@
+.woocommerce-account{
+    background: #F7F9FD;
+}
+
+.woocommerce-MyAccount-navigation{
+    width: 100%;
+    padding: 20px 15px;
+    float: left;
+    border: 1px solid #E0E4E7;
+    border-radius:4px;
+    margin-bottom:100px;
+    background: #fff;
+    ul{
+        @extend .list-unstyled;
+        li{
+            padding:10px 15px;
+            a{
+                font-weight:$bold;
+                font-size:15px;
+                &:hover{
+                    color:darken($primary, 5%);
+                }
+            }
+        }
+    }
+}
+
+.woocommerce-MyAccount-content{
+    width: calc(100% - 230px);
+    float: left;
+    padding: 0px 15px;
+}
+
+@media (min-width: 992px){
+    .woocommerce-MyAccount-navigation{
+        width: 230px;
+    }
+}
