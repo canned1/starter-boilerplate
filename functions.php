@@ -243,4 +243,19 @@ function patricks_woocommerce_catalog_orderby( $orderby ) {
 }
 add_filter( "woocommerce_catalog_orderby", "patricks_woocommerce_catalog_orderby", 20 );
 
+/* Agregar al carrito*/
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_single_add_to_cart_text' );
+function custom_single_add_to_cart_text() {
+	return pll__('Add To Cart');
+}
+
+// Remove product category/tag meta from its original position
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+// Add product meta in new position
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 5 );
+
+
+//remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+add_action( 'woocommerce_product_thumbnails', 'woocommerce_output_product_data_tabs', 10 );
+
 ?>

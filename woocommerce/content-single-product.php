@@ -42,7 +42,7 @@ if ( post_password_required() ) {
 			do_action( 'woocommerce_before_single_product_summary' );
 		?>
 
-		<div class="col-md-6 summary entry-summary">
+		<div class="col-lg-4 summary entry-summary">
 			<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.

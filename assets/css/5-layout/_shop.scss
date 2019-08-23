@@ -6,12 +6,53 @@ table{
 	@extend .form-control;
 }
 
+/* Category */
+.tax-product_cat{
+	.product{
+		a{
+			color: $black;
+		}
+		p {
+			font-size: 0.9rem;
+		}
+		.price span{
+			color:$primary;
+			font-weight: $bold;
+		}
+	}
+}
 /* Single Product  */
 .single-product{
 	.content-area{
 		.container{
 			padding:0;
 		}
+	}
+	.planes-table{
+		tr:nth-child(1){
+			td{
+				border-top:0;
+			}
+		}
+	}
+	.grouped_form{
+		.btn-lg{
+			font-size: 0.9rem;
+			padding-top: .8rem;
+			padding-bottom: .8rem;
+		}
+	}
+	.grouped-label{
+		font-size:0.9rem;
+		font-weight:$bold;
+		.short-description{
+			font-size:0.8rem;
+			font-weight:$semibold;
+		}
+	}
+	.woocommerce-grouped-product-list-item__price{
+		font-weight:$bold;
+		color: $primary;
 	}
 	.woocommerce div.product form.cart .group_table td{
 		vertical-align: middle;
@@ -20,13 +61,28 @@ table{
 	.woocommerce div.product form.cart .group_table td label{
 		margin-bottom: 0;
 	}
+	div.product p.price{
+		color:$primary;
+		font-size:1.6rem;
+	}
+}
+
+.woocommerce div.product form.cart label{
+	font-weight: $bold;
+}
+
+.woocommerce div.product form.cart div.quantity {
+	float: none;
 }
 
 /* WooCommerce 3.0 Gallery */
 
 .woocommerce-product-gallery {
 	position: relative;
-	margin-bottom: 3em
+	margin-bottom: 3em;
+	.woocommerce-tabs{
+		display:none;
+	}
 }
 	
 .woocommerce-product-gallery figure {
@@ -139,4 +195,18 @@ table{
     .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2{
         width: 100%;
     }
+}
+
+@media (min-width: 992px){
+	.single-product{	
+		.woocommerce-tabs{
+			display:none;
+		}
+	}
+	.woocommerce-product-gallery {
+		.woocommerce-tabs{
+			display:inline-block;
+		}
+	}
+	
 }

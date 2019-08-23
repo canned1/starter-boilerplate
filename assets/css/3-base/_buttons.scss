@@ -12,8 +12,19 @@
 }
 
 .btn-secondary{
-    color:$white;
+    color:$primary;
     background: $secondary;
+    border-color: $secondary;
+    &:hover, &:focus, &:active{
+        color:$primary;
+        background: darken($secondary, 5%);
+        border-color: darken($secondary, 5%);
+    }
+}
+
+.btn-secondary-outline{
+    color:$primary;
+    background: transparent;
     border-color: $secondary;
     &:hover, &:focus, &:active{
         background: darken($secondary, 5%);

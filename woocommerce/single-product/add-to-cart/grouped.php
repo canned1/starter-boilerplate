@@ -20,9 +20,9 @@ defined( 'ABSPATH' ) || exit;
 global $product, $post;
 
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
-
-<form class="cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
-	<table cellspacing="0" class="woocommerce-grouped-product-list group_table">
+<h5>Planes o Paquetes disponibles</h5>
+<form class="card px-3 pt-3 pb-4 cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+	<table cellspacing="0" class="table planes-table">
 		<tbody>
 			<?php
 			$quantites_required      = false;
@@ -69,8 +69,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							$value = ob_get_clean();
 							break;
 						case 'label':
-							$value  = '<label for="product-' . esc_attr( $grouped_product_child->get_id() ) . '">';
+							$value  = '<label class="grouped-label" for="product-' . esc_attr( $grouped_product_child->get_id() ) . '">';
 							$value .= $grouped_product_child->is_visible() ? '<a href="' . esc_url( apply_filters( 'woocommerce_grouped_product_list_link', $grouped_product_child->get_permalink(), $grouped_product_child->get_id() ) ) . '">' . $grouped_product_child->get_name() . '</a>' : $grouped_product_child->get_name();
+							$value .= $grouped_product_child->is_visible() ? '<br><a class="short-description" href="' . esc_url( apply_filters( 'woocommerce_grouped_product_list_link', $grouped_product_child->get_permalink(), $grouped_product_child->get_id() ) ) . '">' . $grouped_product_child->get_short_description() . '</a>' : '<br><span class="short-description">'.$grouped_product_child->get_short_description().'</span>';
 							$value .= '</label>';
 							break;
 						case 'price':
@@ -100,7 +101,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<button type="submit" class="btn btn-primary"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" class="btn btn-lg btn-secondary"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" class="btn btn-lg btn-secondary-outline mt-2"><?php echo pll__('Enviar como regalo'); ?></button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 

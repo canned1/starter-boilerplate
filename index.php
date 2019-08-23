@@ -159,6 +159,30 @@ Template Name: Home
 					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
 				<p class="price">$65.000</p>
 			</a>
+			<a href="#" class="col-12 col-md-2 product lg-size">
+				<div class="img-wrapper">
+					<div class="img-container">
+						<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/experience1.png">
+					</div>
+				</div>
+				<h6 class="mt-3">Viaje sorpresa</h6>
+				<p class="description">Escappy Travel conecta tus deseos de vivir nuevas experiencias, con destinos
+					sorpresa, en un
+					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
+				<p class="price">$65.000</p>
+			</a>
+			<a href="#" class="col-12 col-md-2 product lg-size">
+				<div class="img-wrapper">
+					<div class="img-container">
+						<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/experience1.png">
+					</div>
+				</div>
+				<h6 class="mt-3">Viaje sorpresa</h6>
+				<p class="description">Escappy Travel conecta tus deseos de vivir nuevas experiencias, con destinos
+					sorpresa, en un
+					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
+				<p class="price">$65.000</p>
+			</a>
 		</div>
 		<div class="row">
 			<div class="col-12">
