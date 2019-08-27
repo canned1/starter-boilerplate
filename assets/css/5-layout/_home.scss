@@ -1,5 +1,6 @@
 .home{
     padding-bottom:50px;
+    overflow-x: hidden;
     .homecarousel, .carousel-inner, .carousel-item, .carousel-item img{
         height:100vh;
     }
@@ -52,6 +53,10 @@
                 }
             }
         }
+    }
+
+    .item{
+        padding:15px;
     }
     @media (min-width: 768px){
         .homecarousel, .carousel-inner, .carousel-item, .carousel-item img{

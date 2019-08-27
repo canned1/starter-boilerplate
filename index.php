@@ -9,11 +9,9 @@ Template Name: Home
 			<div id="carouselExampleSlidesOnly" class="col-12 p-0 homecarousel carousel slide" data-ride="carousel">
 				<div class="col-12 home-search">
 					<form role="search" method="get"  class="row justify-content-center" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<div class="col-10 col-md-5">
-							<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="form-control" type="text" placeholder="<?php echo pll__('Buscar experiencia, lugar, categoría'); ?>" value="<?php echo get_search_query(); ?>" name="s">
-							<input type="hidden" name="post_type" value="product" />
-						</div>
-						<button class="col-2 col-md-1 btn btn-primary" type="submit">Buscar</button>
+						<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="col-10 col-md-5 form-control" type="text" placeholder="<?php echo pll__('Buscar experiencia, lugar, categoría'); ?>" value="<?php echo get_search_query(); ?>" name="s">
+						<input type="hidden" name="post_type" value="product" />
+						<button class="col-10 col-md-1 mt-2 mt-md-0 btn btn-primary" type="submit">Buscar</button>
 					</form>
 				</div>
 				<ol class="carousel-indicators">
@@ -89,7 +87,7 @@ Template Name: Home
 		<div class="row mt-5 my-3">
 			<h2 class="col-12">Mejores valorados</h2>
 		</div>
-		<div class="row justify-content-between">
+		<div class="row justify-content-between responsive">
 			<?php 
 				// The tax query
 				$meta_query  = WC()->query->get_meta_query();
@@ -117,72 +115,26 @@ Template Name: Home
 
 				if ( $query->have_posts() ) {
 					while ( $query->have_posts() ) : $query->the_post(); global $product;
-						echo '<a href="'.get_permalink($query->post->ID ).'"  class="col-12 col-md-3 product lg-size">';
-							echo '<div class="img-wrapper">';
-								echo '<div class="img-container">';
-									if(get_the_post_thumbnail_url( $query->post->ID, 'shop_catalog' )){
-										echo '<img src="'. get_the_post_thumbnail_url( $query->post->ID, 'shop_catalog' ) .'" alt="">';
-									} else {
-									echo '<img src="'. wc_placeholder_img_src( 'full' ) .'" alt="">'; 
-									}
+						echo '<div class="item">';
+							echo '<a href="'.get_permalink($query->post->ID ).'"  class="col-12 product lg-size">';
+								echo '<div class="img-wrapper">';
+									echo '<div class="img-container">';
+										if(get_the_post_thumbnail_url( $query->post->ID, 'shop_catalog' )){
+											echo '<img src="'. get_the_post_thumbnail_url( $query->post->ID, 'shop_catalog' ) .'" alt="">';
+										} else {
+										echo '<img src="'. wc_placeholder_img_src( 'full' ) .'" alt="">'; 
+										}
+									echo '</div>';
 								echo '</div>';
-							echo '</div>';
-							echo '<h6 class="mt-3">'.get_the_title().'</h6>';
-							echo '<p class="description">'. get_the_excerpt() .'</p>';
-							echo '<p class="price">'. $product->get_price_html().' '.get_woocommerce_currency().'</p>';
-						echo '</a>';
+								echo '<h6 class="mt-3">'.get_the_title().'</h6>';
+								echo '<p class="description">'. get_the_excerpt() .'</p>';
+								echo '<p class="price">'. $product->get_price_html().' '.get_woocommerce_currency().'</p>';
+							echo '</a>';
+						echo '</div>';
 					endwhile;
 					wp_reset_query(); 
 				}
 			?>
-			<a href="#" class="col-12 col-md-2 product lg-size">
-				<div class="img-wrapper">
-					<div class="img-container">
-						<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/experience1.png">
-					</div>
-				</div>
-				<h6 class="mt-3">Viaje sorpresa</h6>
-				<p class="description">Escappy Travel conecta tus deseos de vivir nuevas experiencias, con destinos
-					sorpresa, en un
-					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
-				<p class="price">$65.000</p>
-			</a>
-			<a href="#" class="col-12 col-md-2 product lg-size">
-				<div class="img-wrapper">
-					<div class="img-container">
-						<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/experience1.png">
-					</div>
-				</div>
-				<h6 class="mt-3">Viaje sorpresa</h6>
-				<p class="description">Escappy Travel conecta tus deseos de vivir nuevas experiencias, con destinos
-					sorpresa, en un
-					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
-				<p class="price">$65.000</p>
-			</a>
-			<a href="#" class="col-12 col-md-2 product lg-size">
-				<div class="img-wrapper">
-					<div class="img-container">
-						<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/experience1.png">
-					</div>
-				</div>
-				<h6 class="mt-3">Viaje sorpresa</h6>
-				<p class="description">Escappy Travel conecta tus deseos de vivir nuevas experiencias, con destinos
-					sorpresa, en un
-					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
-				<p class="price">$65.000</p>
-			</a>
-			<a href="#" class="col-12 col-md-2 product lg-size">
-				<div class="img-wrapper">
-					<div class="img-container">
-						<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/experience1.png">
-					</div>
-				</div>
-				<h6 class="mt-3">Viaje sorpresa</h6>
-				<p class="description">Escappy Travel conecta tus deseos de vivir nuevas experiencias, con destinos
-					sorpresa, en un
-					viaje. 24 horas antes de partir sabrás la ruta diseñada para ti.</p>
-				<p class="price">$65.000</p>
-			</a>
 		</div>
 		<div class="row">
 			<div class="col-12">

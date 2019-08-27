@@ -57,6 +57,22 @@
     }
 }
 
+.cart-icon {
+    position: relative;
+    .cart-quantity {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: $secondary;
+        font-size: 0.6rem;
+        top: 0;
+        left: 33px;
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 1px;
+    }
+}
+
 @media (min-width: 992px){
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 0.8rem;

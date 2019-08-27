@@ -8,17 +8,17 @@
 					<div class="row">
 						<ul class="col-12 list-inline social-list">
 							<li class="list-inline-item">
-								<a href="#">
+								<a target="_blank" href="https://www.facebook.com/happyliveslatam">
 									<i class="fab fa-facebook-f"></i>
 								</a>
 							</li>
 							<li class="list-inline-item">
-								<a href="#">
+								<a target="_blank" href="https://www.instagram.com/happylivesco/">
 									<i class="fab fa-instagram"></i>
 								</a>
 							</li>
 							<li class="list-inline-item">
-								<a href="#">
+								<a target="_blank" href="https://twitter.com/happylivesco">
 									<i class="fab fa-twitter"></i>
 								</a>
 							</li>
@@ -77,7 +77,16 @@
 			</div>
 		</div>
 	</footer>
-	<?php wp_footer(); ?> 	
+	<?php wp_footer(); ?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145101578-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-145101578-1');
+	</script>
 </body>
 
 </html>

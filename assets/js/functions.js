@@ -1,3 +1,5 @@
+(function($) {
+
 $(document).ready(function(){
     $('.responsive').slick({
         dots: true,
@@ -35,3 +37,6 @@ $(document).ready(function(){
         ]
     });
 });
+
+      
+})(jQuery);
