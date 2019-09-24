@@ -57,11 +57,25 @@
 			<a class="navbar-brand" href="<?php echo home_url('/');?>">
 				<img src="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/logo.png" alt="Happy Lives">
 			</a>
+
+			<button type="button" class="toggle-mobile-search search-icon d-md-none">
+				<img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/search-icon.svg'; ?>" alt="search">
+			</button>
+			
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
+			<div class="col-12 py-5 search-input d-md-none" style="display:none;">
+				<form class="row">
+					<div class="col-12 mb-3">
+						<input name="s" type="search" class="form-control" placeholder="<?php echo pll__('Buscar experiencia, lugar, categoría'); ?>" value="<?php echo get_search_query(); ?>">
+					</div>
+					<div class="col-12">
+						<button type="submit" class="btn btn-secondary btn-block">Buscar</button>
+					</div>
+				</form>
+			</div>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<?php
                     wp_nav_menu( array(

@@ -38,5 +38,10 @@ $(document).ready(function(){
     });
 });
 
+$(".toggle-mobile-search").on('click', function() {
+    $(".search-input").fadeToggle();
+    
+ });
+
       
 })(jQuery);

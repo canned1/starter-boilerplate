@@ -59,7 +59,6 @@ Template Name: Home
 				$order = 'asc';
 				$hide_empty = false ;
 				$cat_args = array(
-					'orderby'    => $orderby,
 					'order'      => $order,
 					'hide_empty' => $hide_empty,
 				);
