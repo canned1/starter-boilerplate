@@ -1,8 +1,10 @@
-<a href="<?php echo wc_get_cart_url(); ?>"  class="nav-link cart-icon">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/shopping-cart-icon.svg'; ?>" alt="cart">
-				<span class="cart-quantity"><?php echo WC()->cart->cart_contents_count; ?></span>
-				<span class="cart-price"><?php echo WC()->cart->get_cart_total(); ?></span>
-</a>
+<nav class="navbar fixed-bottom navbar-light bg-light bottom-navbar d-md-none">
+	<a href="<?php echo wc_get_cart_url(); ?>"  class="cart-icon">
+					<img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/shopping-cart-icon.svg'; ?>" alt="cart">
+					<span class="cart-quantity"><?php echo WC()->cart->cart_contents_count; ?></span>
+					<span class="cart-price"><?php echo WC()->cart->get_cart_total(); ?></span>
+	</a>
+</nav>
 <footer class="footer">
 		<div class="container">
 			<div class="row justify-content-between">

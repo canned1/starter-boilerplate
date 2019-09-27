@@ -28,6 +28,14 @@ table{
 			padding:0;
 		}
 	}
+	.cart{
+		.btn{
+			font-size: 0.9rem;
+			padding-top: .8rem;
+			padding-bottom: .8rem;
+			width: 100%;
+		}
+	}
 	.planes-table{
 		tr:nth-child(1){
 			td{
@@ -188,9 +196,9 @@ table{
         float: left;
         padding-right: 50px;
     }
-    .woocommerce table.shop_table td{
-        width: 50%;
-    }
+    //.woocommerce table.shop_table td{
+       // width: 50%;
+    //}
     .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1,
     .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2{
         width: 100%;
