@@ -14666,11 +14666,14 @@ a {
   background: transparent;
   border: none;
   outline: none !important; }
+  .search-icon img {
+    width: 18px; }
 
 .search-input input[type='search'] {
   background: rgba(255, 255, 255, 0.2);
   border: none;
-  color: #fff; }
+  color: #fff;
+  font-size: 0.9rem; }
 
 .search-input ::-webkit-input-placeholder {
   /* Edge */
@@ -14702,6 +14705,12 @@ a {
     text-align: center;
     border-radius: 50%;
     padding-top: 1px; }
+
+.cart-price {
+  font-size: 0.8rem;
+  margin-left: 12px;
+  opacity: 1;
+  color: #fff; }
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {

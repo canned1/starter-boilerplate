@@ -55,7 +55,7 @@ function add_search_form($items, $args) {
                         .'<div class="row">'
                             .'<input name="s" type="search" class="col-12 form-control" placeholder="'. pll__('Buscar experiencia, lugar, categoría') .'" value="'.get_search_query().'">'
                             . '<button type="submit" href="#" class="search-icon">'
-                                . '<img class="img-fluid" src="'. get_template_directory_uri() .'/assets/img/search-icon.svg" alt="search">'
+                                . '<img src="'. get_template_directory_uri() .'/assets/img/search-icon.svg" alt="search">'
                             . '</button>'
                         .'</div>'
                     . '</form>'
@@ -64,7 +64,7 @@ function add_search_form($items, $args) {
                     . '<a href="'. wc_get_cart_url(). '"  class="nav-link cart-icon">'
                         . '<img class="img-fluid" src="'. get_template_directory_uri() .'/assets/img/shopping-cart-icon.svg" alt="cart">'
                         . '<span class="cart-quantity">'. WC()->cart->cart_contents_count .'</span>'
-                        . '<span class="cart-price">'. WC()->cart->get_cart_total() .'</span>'
+                        . '<span class="cart-price">'. WC()->cart->get_cart_total() .' '.get_woocommerce_currency() . '</span>'
                     . '</a>'
               .'</li>';
         if ( is_user_logged_in() ) { 
@@ -238,6 +238,93 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_single_add_to
 function custom_single_add_to_cart_text() {
 	return pll__('Add To Cart');
 }
+
+// Add custom gift fields to product page
+function add_gift_fields(){
+    echo '<input class="form-control" type="hidden" name="gift_send_from_name" id="hidden_gift_send_from_name" placeholder="De">';
+    echo '<input class="form-control" type="hidden" name="gift_send_to_name" id="hidden_gift_send_to_name" placeholder="Para">';
+    echo '<textarea class="form-control d-none" name="gift_send_to_message" id="hidden_gift_send_to_message" rows="4" maxlength="400" placeholder="Mensaje"></textarea>';
+    echo '<input class="form-control" type="hidden" name="gift_send_to_email" id="hidden_gift_send_to_email" placeholder="Enviar a">';
+    echo '<input class="form-control" type="hidden" name="gift_send_from_email" id="hidden_gift_send_from_email" placeholder="Enviado por">';
+}
+add_action( 'woocommerce_before_add_to_cart_button', 'add_gift_fields', 10 );
+
+//Catch custom data when product is added to the cart
+function add_gift_fields_to_cart_item( $cart_item_data, $product_id, $variation_id ) {
+    
+    $fromname = filter_input( INPUT_POST, 'gift_send_from_name' );
+    $toname = filter_input( INPUT_POST, 'gift_send_to_name' );
+    $tomessage = filter_input( INPUT_POST, 'gift_send_to_message' );
+    $toemail = filter_input( INPUT_POST, 'gift_send_to_email' );
+    $fromemail = filter_input( INPUT_POST, 'gift_send_from_email' );
+    
+    if ( empty( $toname ) || empty( $toemail ) || empty( $tomessage ) || empty( $fromname ) || empty( $fromemail ) ) {
+        return $cart_item_data;
+    }
+    
+    $cart_item_data['gift_send_from_name'] = $fromname;
+    $cart_item_data['gift_send_to_name'] = $toname;
+    $cart_item_data['gift_send_to_message'] = $tomessage;
+    $cart_item_data['gift_send_to_email'] = $toemail;
+    $cart_item_data['gift_send_from_email'] = $fromemail;
+ 
+    return $cart_item_data;
+}
+add_filter( 'woocommerce_add_cart_item_data', 'add_gift_fields_to_cart_item', 10, 3 );
+
+// Display data in the cart
+function display_data_in_cart( $item_data, $cart_item ) {
+    
+    if ( empty( $cart_item['gift_send_to_name'] ) || empty( $cart_item['gift_send_to_email'] ) || empty( $cart_item['gift_send_to_message'] ) || empty( $cart_item['gift_send_from_name'] ) || empty( $cart_item['gift_send_from_email'] ) ) {
+        return $item_data;
+    }
+ 
+    $item_data[] = array(
+        'key'     => __( 'De', 'de' ),
+        'value'   => wc_clean( $cart_item['gift_send_from_name'] ),
+        'display' => '',
+    );
+
+    $item_data[] = array(
+        'key'     => __( 'Para', 'para' ),
+        'value'   => wc_clean( $cart_item['gift_send_to_name'] ),
+        'display' => '',
+    );
+
+    $item_data[] = array(
+        'key'     => __( 'Mensaje', 'mensaje' ),
+        'value'   => wc_clean( $cart_item['gift_send_to_message'] ),
+        'display' => '',
+    );
+
+    $item_data[] = array(
+        'key'     => __( 'Enviar', 'enviar' ),
+        'value'   => wc_clean( $cart_item['gift_send_to_email'] ),
+        'display' => '',
+    );
+
+    $item_data[] = array(
+        'key'     => __( 'Enviado', 'enviado' ),
+        'value'   => wc_clean( $cart_item['gift_send_from_email'] ),
+        'display' => '',
+    );
+
+    return $item_data;
+}
+add_filter( 'woocommerce_get_item_data', 'display_data_in_cart', 10, 2 );
+
+//Saves data to the order
+function add_data_to_order_items( $item, $cart_item_key, $values, $order ) {
+    if ( empty( $cart_item['gift_send_to_name'] ) || empty( $cart_item['gift_send_to_email'] ) || empty( $cart_item['gift_send_to_message'] ) || empty( $cart_item['gift_send_from_name'] ) || empty( $cart_item['gift_send_from_email'] ) ) {
+        return;
+    }
+    $item->add_meta_data( __( 'De', 'de' ), $values['gift_send_from_name'] );
+    $item->add_meta_data( __( 'Para', 'para' ), $values['gift_send_to_name'] );
+    $item->add_meta_data( __( 'Mensaje', 'message' ), $values['gift_send_to_message'] );
+    $item->add_meta_data( __( 'Enviar', 'enviar' ), $values['gift_send_to_email'] );
+    $item->add_meta_data( __( 'Enviado', 'enviado' ), $values['gift_send_from_email'] );
+} 
+add_action( 'woocommerce_checkout_create_order_line_item', 'add_data_to_order_items', 10, 4 );
 
 // Remove product category/tag meta from its original position
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

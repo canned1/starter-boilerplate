@@ -21,7 +21,7 @@ global $product, $post;
 
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 <h5>Planes o Paquetes disponibles</h5>
-<form class="card px-3 pt-3 pb-4 cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+<form id="singleproductform" class="card px-3 pt-3 pb-4 cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
 	<table cellspacing="0" class="table planes-table">
 		<tbody>
 			<?php

@@ -3069,8 +3069,31 @@ $(document).ready(function(){
 
 $(".toggle-mobile-search").on('click', function() {
     $(".search-input").fadeToggle();
-    
- });
+});
+
+$('#gift_send_from_name').blur(function() {
+    $('#hidden_gift_send_from_name').val($('#gift_send_from_name').val());
+});
+
+$('#gift_send_to_name').blur(function() {
+    $('#hidden_gift_send_to_name').val($('#gift_send_to_name').val());
+});
+
+$('#gift_send_to_message').blur(function() {
+    $('#hidden_gift_send_to_message').val($('#gift_send_to_message').val());
+});
+
+$('#gift_send_to_email').blur(function() {
+    $('#hidden_gift_send_to_email').val($('#gift_send_to_email').val());
+});
+
+$('#gift_send_from_email').blur(function() {
+    $('#hidden_gift_send_from_email').val($('#gift_send_from_email').val());
+});
+
+$("#singleproductformbtn").click(function(){        
+    $("#singleproductform").submit(); // Submit the form
+});
 
       
 })(jQuery);

@@ -7,7 +7,7 @@ Template Name: Home
 	<div class="container-fluid home">
 		<div class="row">
 			<div id="carouselExampleSlidesOnly" class="col-12 p-0 homecarousel carousel slide" data-ride="carousel">
-				<div class="col-12 home-search">
+				<div class="col-12 home-search d-none">
 					<form role="search" method="get"  class="row justify-content-center" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="col-10 col-md-5 form-control" type="text" placeholder="<?php echo pll__('Buscar experiencia, lugar, categoría'); ?>" value="<?php echo get_search_query(); ?>" name="s">
 						<input type="hidden" name="post_type" value="product" />

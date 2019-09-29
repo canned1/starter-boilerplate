@@ -31,31 +31,59 @@
 							</li>
 						</ul>
 					</div>
-					<form class="row justify-content-center">
-						<h5 class="col-12">Suscríbete a nuestro newsletter</h5>
-						<p class="col-12">Recibirás información de nuestros últimas experiencias y descuentos</p>
-						<div class="col-12 col-md-7 pr-md-0">
-							<input class="form-control" type="email" placeholder="Email" aria-label="Email">
-						</div>
-						<div class="col-12 col-md-5 mt-2 mb-4 my-md-0">
+					<div class="row">
+						<form action="https://facebook.us7.list-manage.com/subscribe/post?u=8ff39d019b43eee09df98633e&amp;id=f7322964a2" method="post" name="mc-embedded-subscribe-form" class="col-12">
+							<h5>Suscríbete a nuestro newsletter</h5>
+							<p>Recibirás información de nuestros últimas experiencias y descuentos</p>
+							<div class="form-group">
+								<label>Email</label>
+								<input name="EMAIL" class="form-control" type="email" placeholder="Email" aria-label="Email">
+							</div>
+							<div class="form-group">
+								<label>Intereses </label>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									<label class="form-check-label" for="defaultCheck1">
+										Entretenimiento
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									<label class="form-check-label" for="defaultCheck1">
+										Bienestar
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									<label class="form-check-label" for="defaultCheck1">
+										Turismo
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									<label class="form-check-label" for="defaultCheck1">
+										Gastronomía
+									</label>
+								</div>
+							</div>
 							<button class="btn btn-block btn-secondary" type="submit">Suscribirme</button>
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 				<div class="col-12 col-md-2">
 					<h5>Categorías</h5>
 					<ul class="list-unstyled">
 						<li class="list-item">
-							<a href="#">Entretenimiento</a>
+							<a href="<?php echo home_url('/product-category/entretenimiento/');?>">Entretenimiento</a>
 						</li>
 						<li class="list-item">
-							<a href="#">Gastronomía</a>
+							<a href="<?php echo home_url('/product-category/gastronomia/');?>">Gastronomía</a>
 						</li>
 						<li class="list-item">
-							<a href="#">Turismo</a>
+							<a href="<?php echo home_url('/product-category/turismo/');?>">Turismo</a>
 						</li>
 						<li class="list-item">
-							<a href="#">Bienestar</a>
+							<a href="<?php echo home_url('/product-category/bienestar/');?>">Bienestar</a>
 						</li>
 					</ul>
 				</div>
@@ -63,10 +91,10 @@
 					<h5>Ayuda</h5>
 					<ul class="list-unstyled">
 						<li class="list-item">
-							<a href="#">Contacto</a>
+							<a href="<?php echo home_url('/contacto');?>">Contacto</a>
 						</li>
 						<li class="list-item">
-							<a href="#">Preguntas Frecuentes</a>
+							<a href="<?php echo home_url('/preguntas-frecuentes');?>">Preguntas Frecuentes</a>
 						</li>
 					</ul>
 				</div>
@@ -74,12 +102,26 @@
 					<h5>Acerca de Happy Lives</h5>
 					<ul class="list-unstyled">
 						<li class="list-item">
+							<a href="<?php echo home_url('quienes-somos')?>">¿Quienes somos?</a>
+						</li>
+						<li class="list-item">
 							<a href="<?php echo home_url('politicas-de-privacidad')?>">Políticas de privacidad</a>
 						</li>
 						<li class="list-item">
 							<a href="#">Términos y condiciones</a>
 						</li>
 					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<div class="row justify-content-center align-items-center">
+					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/visa.svg'; ?>"></div>
+					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/mastercard.svg'; ?>"></div>
+					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/pse.svg'; ?>"></div>
+					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/baloto.png'; ?>"></div>
+					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/efecty.png'; ?>"></div>
 				</div>
 			</div>
 		</div>

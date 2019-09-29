@@ -32,7 +32,7 @@
 	<meta property="og:image" content="<?php echo bloginfo( 'template_directory' ); ?>/assets/img/share.png">
 	<meta property="og:description" content="">
     <?php wp_head(); ?>
-	<!-- <link rel="apple-touch-icon" sizes="57x57" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/apple-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/apple-icon-76x76.png">
@@ -45,10 +45,10 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/favicon-16x16.png">
-	<link rel="manifest" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#F15757">
+	<!-- <link rel="manifest" href="<?php echo bloginfo( 'template_directory' ); ?>/favicon/manifest.json"> -->
+	<meta name="msapplication-TileColor" content="#4D437B">
 	<meta name="msapplication-TsileImage" content="<?php echo bloginfo( 'template_directory' ); ?>/ms-icon-144x144.png">
-	<meta name="theme-color" content="#F15757"> -->
+	<meta name="theme-color" content="#4D437B">
 </head>
 
 <body <?php body_class(); ?>>

@@ -74,3 +74,54 @@ if ( post_password_required() ) {
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Regala esta experiencia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+			<div class="row justify-content-center">
+				<form class="form col-12 col-lg-7">
+					<p>Completa esta información para enviar un bono de regalo Happy Lives</p>
+					<div class="form-group">
+						<label>De</label>
+						<input id="gift_send_from_name" type="text" class="form-control field" placeholder="Tu nombre">
+					</div>
+					<div class="form-group">
+						<label>Para</label>
+						<input id="gift_send_to_name" type="text" class="form-control" placeholder="Su nombre">
+					</div>
+					<div class="form-group">
+						<label>Mensaje</label>
+						<textarea id="gift_send_to_message" rows="4" class="form-control" placeholder="Mensaje"></textarea>
+					</div>
+					<div class="form-group">
+						<label>Enviar a:</label>
+						<input id="gift_send_to_email" type="email" class="form-control" placeholder="Ingresa el email de la persona que quieres que reciba este bono">
+					</div>
+					<div class="form-group">
+						<label>Enviado por:</label>
+						<input id="gift_send_from_email" type="text" class="form-control" placeholder="Ingresa tu correo">
+					</div>
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" for="exampleCheck1">Acepto <a href="<?php echo home_url('/terminos-y-condiciones'); ?>">términos y condiciones</a> y <a href="<?php echo home_url('/terminos-y-condiciones'); ?>">políticas de privacidad</a></label>
+					</div>
+				</form>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" id="singleproductformbtn" class="btn btn-primary">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
