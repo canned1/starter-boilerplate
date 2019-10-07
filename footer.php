@@ -70,58 +70,67 @@
 						</form>
 					</div>
 				</div>
-				<div class="col-12 col-md-2">
-					<h5>Categorías</h5>
-					<ul class="list-unstyled">
-						<li class="list-item">
-							<a href="<?php echo home_url('/product-category/entretenimiento/');?>">Entretenimiento</a>
-						</li>
-						<li class="list-item">
-							<a href="<?php echo home_url('/product-category/gastronomia/');?>">Gastronomía</a>
-						</li>
-						<li class="list-item">
-							<a href="<?php echo home_url('/product-category/turismo/');?>">Turismo</a>
-						</li>
-						<li class="list-item">
-							<a href="<?php echo home_url('/product-category/bienestar/');?>">Bienestar</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-12 col-md-2">
-					<h5>Ayuda</h5>
-					<ul class="list-unstyled">
-						<li class="list-item">
-							<a href="<?php echo home_url('/contacto');?>">Contacto</a>
-						</li>
-						<li class="list-item">
-							<a href="<?php echo home_url('/preguntas-frecuentes');?>">Preguntas Frecuentes</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-12 col-md-2">
-					<h5>Acerca de Happy Lives</h5>
-					<ul class="list-unstyled">
-						<li class="list-item">
-							<a href="<?php echo home_url('quienes-somos')?>">¿Quienes somos?</a>
-						</li>
-						<li class="list-item">
-							<a href="<?php echo home_url('politicas-de-privacidad')?>">Políticas de privacidad</a>
-						</li>
-						<li class="list-item">
-							<a href="#">Términos y condiciones</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-12">
-				<div class="row justify-content-center align-items-center">
-					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/visa.svg'; ?>"></div>
-					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/mastercard.svg'; ?>"></div>
-					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/pse.svg'; ?>"></div>
-					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/baloto.png'; ?>"></div>
-					<div class="col-1"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/efecty.png'; ?>"></div>
+				<div class="col-6">
+					<div class="row">
+						<div class="col-12 col-md-4">
+							<h5>Categorías</h5>
+							<ul class="list-unstyled">
+								<li class="list-item">
+									<a href="<?php echo home_url('/product-category/entretenimiento/');?>">Entretenimiento</a>
+								</li>
+								<li class="list-item">
+									<a href="<?php echo home_url('/product-category/gastronomia/');?>">Gastronomía</a>
+								</li>
+								<li class="list-item">
+									<a href="<?php echo home_url('/product-category/turismo/');?>">Turismo</a>
+								</li>
+								<li class="list-item">
+									<a href="<?php echo home_url('/product-category/bienestar/');?>">Bienestar</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-12 col-md-4">
+							<h5>Ayuda</h5>
+							<ul class="list-unstyled">
+								<li class="list-item">
+									<a href="<?php echo home_url('/contacto');?>">Contacto</a>
+								</li>
+								<li class="list-item">
+									<a href="<?php echo home_url('/preguntas-frecuentes');?>">Preguntas Frecuentes</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-12 col-md-4">
+							<h5>Acerca de Happy Lives</h5>
+							<ul class="list-unstyled">
+								<li class="list-item">
+									<a href="<?php echo home_url('quienes-somos')?>">¿Quienes somos?</a>
+								</li>
+								<li class="list-item">
+									<a href="<?php echo home_url('politicas-de-privacidad')?>">Políticas de privacidad</a>
+								</li>
+								<li class="list-item">
+									<a href="#">Términos y condiciones</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-12">
+							<div class="row mt-4">
+								<div class="col-12">
+									<h6>Recibimos todas las formas de pago</h6>
+								</div>
+							</div>
+							<div class="row justify-content-center align-items-center">
+								<div class="col-2"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/visa.svg'; ?>"></div>
+								<div class="col-2"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/mastercard.svg'; ?>"></div>
+								<div class="col-2"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/pse.svg'; ?>"></div>
+								<div class="col-2"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/baloto.png'; ?>"></div>
+								<div class="col-2"><img class="img-fluid" src="<?php echo get_template_directory_uri() .'/assets/img/efecty.png'; ?>"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

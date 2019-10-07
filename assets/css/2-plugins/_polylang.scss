@@ -1,0 +1,24 @@
+.pll-parent-menu-item {
+    @extend .nav-item;
+    @extend .dropdown;
+    a{
+        @extend .nav-link;
+        @extend .dropdown-toggle;
+    }
+    .sub-menu{
+        @extend .dropdown-menu;
+        a{
+            @extend .dropdown-item;
+        }
+    }
+}
+
+.navbar-nav {
+    > li {
+        &:hover{
+            .sub-menu{
+                display:inline-block;
+            }
+        }
+    }
+}
